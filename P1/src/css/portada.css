@@ -1,11 +1,14 @@
+body{
+    margin: 0px;
+}
+
+/*Cabecera*/
 .Contenedor_cabecera{
     background-color: #125709bd;
-    padding: 20px 10px;
+    height: 15%;
 }
 
 .Cabecera{
-    max-width: 1200px;
-    margin: 0 auto; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,4 +17,40 @@
 .Menu{
     margin-top: 10px;
     flex-direction: column;
+}
+
+/*Contenido*/
+.Contenido{
+    display: flex; 
+    height: 75%;
+}
+.Panel_lateral{
+    background-color: #1100ffbd;
+    width: 30%;
+    padding: 20px;
+}
+
+.Contenedor_actividades{
+    background-color: #ff008c2d;
+    width: 70%;
+    padding: 20px;
+}
+
+.Grid_actividades{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns:  1fr 1fr 1fr;
+    column-gap: 1em;
+    row-gap: 1em;
+}
+.Actividad{
+    background-color: #00ff73bd;
+}
+
+/*Pie de pagina*/
+.Pie_pagina{
+    display: flex; 
+    height: 10%;
+    background-color: #ffe6005b;
 }
