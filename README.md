@@ -13,7 +13,7 @@ Ingeniería Informática UGR 2023-2024
 Cada una de las prácticas corresponderá a una carpeta propia denominada PX siendo X el número de la práctica  
 En esta se podrá ver el guión de la misma junto con una carpeta src dentro de la cual se encuentra todo el código de la práctica  
 
-##Prácticas: 
+## Prácticas: 
 
 ### Práctica 1:
 - HTML y CSS3
