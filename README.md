@@ -1,10 +1,31 @@
-# SIBW
+# Repositorio de prácticas de SIBW  
 
-Prácticas Sistemas Informáticos Basados en Web  
-Ingeniería Informática UGR 2023-2024
+Prácticas Sistemas de Información Basados en Web  
+Ingeniería Informática UGR 2023-2024  
+ - **Jorge Sánchez Rodríguez**
 
- - Jorge Sánchez Rodríguez
+## Objetivos de la asignatura:
+ - Introducción al desarrollo de software orientado a la web
+ - Reafirmar fundamentos de desarrollo del software
 
-# Práctica 1
-Realización de 3 páginas Web con HTML y CSS3  
-El código se encuentra en la carpeta P1 dentro de la carpeta src respectivamente dentro de la carpeta html o css y las imagenes usadas en la carpeta img
+## Estructura del Repositorio:
+
+Cada una de las prácticas corresponderá a una carpeta propia denominada PX siendo X el número de la práctica  
+En esta se podrá ver el guión de la misma junto con una carpeta src dentro de la cual se encuentra todo el código de la práctica  
+
+##Prácticas: 
+
+### Práctica 1:
+- HTML y CSS3
+
+### Práctica 2:
+- JavaScript
+
+### Práctica 3:
+- Programación en el servidor(I): PHP y páginas dinámicas
+
+### Práctica 4:
+- Programación en el servidor(II): PHP y BD
+
+### Práctica 5:
+- Comunicación asíncrona con el servidor: AJAX
