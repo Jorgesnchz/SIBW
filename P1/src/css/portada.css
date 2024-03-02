@@ -1,0 +1,17 @@
+.Contenedor_cabecera{
+    background-color: #125709bd;
+    padding: 20px 10px;
+}
+
+.Cabecera{
+    max-width: 1200px;
+    margin: 0 auto; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Menu{
+    margin-top: 10px;
+    flex-direction: column;
+}
