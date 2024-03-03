@@ -1,38 +1,66 @@
 body{
     margin: 0px;
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*Cabecera*/
-.Contenedor_cabecera{
+.contenedor_cabecera_basico{
     background-color: #125709bd;
-    height: 15%;
+    height: 252px;
+    display: flex; 
+    padding: 20px;
 }
 
-.Cabecera{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.logo img{
+    height: 232px;
+    width: auto;
 }
 
-.Menu{
-    margin-top: 10px;
-    flex-direction: column;
+.cabecera{
+    width: 100%;
+}
+
+.contenedor_titulo{
+    height: 50%;
+    position: relative;
+}
+
+.titulo{
+    margin: 0px;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    font-family: "Teko", sans-serif;
+}
+
+.contenedor_menu{
+    height: 50%;
+    position: relative;
+}
+
+.menu{
+    display: flex; 
+    position: absolute;
+    bottom: 0;
+    left: 20px;
 }
 
 /*Contenido*/
 .Contenido{
     display: flex; 
-    height: 75%;
+    height: 979px;
 }
 .Panel_lateral{
     background-color: #1100ffbd;
-    width: 30%;
+    width: 20%;
     padding: 20px;
 }
 
 .Contenedor_actividades{
     background-color: #ff008c2d;
-    width: 70%;
+    width: 80%;
     padding: 20px;
 }
 
@@ -51,6 +79,6 @@ body{
 /*Pie de pagina*/
 .Pie_pagina{
     display: flex; 
-    height: 10%;
+    height: 130px;
     background-color: #ffe6005b;
 }
