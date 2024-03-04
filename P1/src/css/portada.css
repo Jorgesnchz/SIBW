@@ -6,7 +6,7 @@ body{
 }
 
 /*Cabecera*/
-.contenedor_cabecera_basico{
+.contenedor_cabecera_entera{
     background-color: #125709bd;
     height: 252px;
     display: flex; 
@@ -18,12 +18,12 @@ body{
     width: auto;
 }
 
-.cabecera{
+.contenedor_cabecera_titulo_menu{
     width: 100%;
 }
 
 .contenedor_titulo{
-    height: 50%;
+    height: 55%;
     position: relative;
 }
 
@@ -32,19 +32,73 @@ body{
     position: absolute;
     bottom: 0;
     left: 20px;
-    font-family: "Teko", sans-serif;
+    font-family: "Namdhinggo", serif;
 }
 
 .contenedor_menu{
-    height: 50%;
+    height: 45%;
     position: relative;
 }
 
-.menu{
-    display: flex; 
+.menu ul, .menu li {
+	margin: 0;
+	padding: 0;
+}
+
+.menu{ 
+    width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     left: 20px;
+}
+.menu ul {
+	list-style: none;
+	width: 100%;
+}
+.menu li {
+	float: left;
+	position: relative;
+	width:auto;
+}
+
+.menu a{
+	background: #034c748f;
+	color: #ffffff;
+	display: block;
+	padding: 10px 25px;
+	text-decoration: none;
+    font: bold 12px/20px sans-serif;
+	text-align: center;
+}
+
+.menu li:hover a{
+	background: #fd0000;
+}
+
+#desplegable {
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 35px;
+	visibility: hidden;
+	z-index: 1;
+}
+
+li:hover ul#desplegable {
+    opacity: 1;
+	top: 40px;
+	visibility: visible;
+}
+
+#desplegable li {
+	width: 100%;
+}
+
+#desplegable a:hover {
+	background: #00ffd5;
+}
+#desplegable a{
+	background-color:#af26ca;
 }
 
 /*Contenido*/

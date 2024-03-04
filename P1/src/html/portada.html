@@ -1,4 +1,4 @@
-<!-- Lenguaje de la pagina -->
+<!-- Lenguaje de la pagina (espanol)-->
 <html lang="es">
 
 <!-- Parte no visible de la pagina -->
@@ -6,40 +6,59 @@
         <!-- Archivo css formato -->
         <link rel="stylesheet" href="../css/portada.css">
         
-        <title>
-            Actividades de Montaña
-        </title>
+        <!-- Titulo y logo de la pagina web en el menu superior-->
+        <title> Actividades de Montaña </title>
+        <link rel="shortcut icon" href="../img/Logo.png">
 
-        <!-- Tipografía usada -->
+        <!-- Tipografías usada, google fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Namdhinggo:wght@400;500;600;700;800&family=Teko:wght@300..700&display=swap" rel="stylesheet">
     </head>
 
 <!-- Parte visible de la pagina -->
     <body>
         <!-- Cabecera -->
-        <div class="contenedor_cabecera_basico">
+        <div class="contenedor_cabecera_entera">
+            <!-- Logo -->
             <div class="logo">
                 <img src="../img/logo.png" alt="Error al cargar la imagen">
             </div>
-            <header class="cabecera">
+            <!-- Contenedor de titulo y menu-->
+            <header class="contenedor_cabecera_titulo_menu">
+                <!--Titulo de la pagina-->
                 <div class="contenedor_titulo">
-                        <h1 class="titulo">
+                        <h1 class="titulo" style="font-size: 90px;">
                         Nombre del sitio
                     </h1> 
                 </div>
+                
+                <!--Menu-->
                 <div class="contenedor_menu">
                     <nav class="menu">
-                        Menu1
-                        Menu2
-                        Menu3
+                        <ul>
+                            <li><a href="http://127.0.0.1:3000/P1/src/html/portada.html">Inicio</a></li>
+                            <li><a>Contacto</a></li>
+                            <li><a>Actividades</a>
+                                <!--Menu desplegable-->
+                                <ul id="desplegable">
+                                    <li><a href="http://127.0.0.1:3000/P1/src/html/actividad1.html">Actividad1</a></li>
+                                    <li><a href="http://127.0.0.1:3000/P1/src/html/actividad2.html">Actividad2</a></li>
+                                    <li><a href="http://127.0.0.1:3000/P1/src/html/actividad3.html">Actividad3</a></li>
+                                    <li><a href="http://127.0.0.1:3000/P1/src/html/actividad4.html">Actividad4</a></li>
+                                    <li><a href="http://127.0.0.1:3000/P1/src/html/actividad5.html">Actividad5</a></li>
+                                    <li><a href="http://127.0.0.1:3000/P1/src/html/actividad6.html">Actividad6</a></li>
+                                    <li><a href="http://127.0.0.1:3000/P1/src/html/actividad7.html">Actividad7</a></li>
+                                    <li><a href="http://127.0.0.1:3000/P1/src/html/actividad8.html">Actividad8</a></li>
+                                    <li><a href="http://127.0.0.1:3000/P1/src/html/actividad9.html">Actividad9</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </nav>
                 </div>
             </header>
-            
         </div>
-        
+
         <!-- Panel lateral + Grid actividades -->
         <div class="Contenido"> 
             <!-- Panel lateral -->
