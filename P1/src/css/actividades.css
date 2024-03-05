@@ -169,61 +169,10 @@ li:hover ul#desplegable {
     font-family: "Poppins", sans-serif;
 }
 
-/*Grid de las actividades*/
-.contenedor_actividades{
+.contenedor_informacion{
     background-color: #c9e0d2;
     width: 80%;
     padding: 20px;
-}
-
-.grid_actividades{
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-columns:  1fr 1fr 1fr;
-    column-gap: 1em;
-    row-gap: 1em;
-}
-/*Actividades dentro del grid*/
-.actividad{
-    display: block;
-    position: relative;
-    background-color: #729e83;
-    border-radius: 1rem;
-    text-align: center; 
-}
-/*Transiciones al pasar el raton encima*/
-.actividad:hover{
-    background-color: #2b5c3f;
-    transition: background-color 0.5s ease;
-}
-
-.actividad:hover > .enlace_inferior{
-    color:white;
-    transition: color  0.5s ease;
-}
-
-/*Imagenes del grid*/
-.actividad img{
-    height: 226px;
-    padding: 10px;
-    border-radius: 1rem;
-}
-
-/*Enlace de la parte inferior*/
-.enlace_inferior{
-        /*Posicion*/
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: 15px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    /*Valores del tipo de letra*/
-    text-decoration: none;
-    color: black;   
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
 }
 
 /*Pie de pagina*/
