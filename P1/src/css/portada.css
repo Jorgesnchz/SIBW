@@ -2,12 +2,12 @@ body{
     margin: 0px;
     width: 1140px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; 
 }
 
 /*Cabecera*/
 .contenedor_cabecera_entera{
-    background-color: #125709bd;
+    background-color: #aabeb9;
     height: 252px;
     display: flex; 
     padding: 20px;
@@ -32,7 +32,7 @@ body{
     position: absolute;
     bottom: 0;
     left: 20px;
-    font-family: "Namdhinggo", serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .contenedor_menu{
@@ -41,8 +41,8 @@ body{
 }
 
 .menu ul, .menu li {
-	margin: 0;
-	padding: 0;
+	margin: 0px;
+	padding: 0px;
 }
 
 .menu{ 
@@ -62,7 +62,7 @@ body{
 }
 
 .menu a{
-	background: #034c748f;
+	background: #2b5c3f;
 	color: #ffffff;
 	display: block;
 	padding: 10px 25px;
@@ -72,13 +72,13 @@ body{
 }
 
 .menu li:hover a{
-	background: #fd0000;
+	background: #133e09;
 }
 
 #desplegable {
-	left: 0;
 	opacity: 0;
 	position: absolute;
+    left: 0px;
 	top: 35px;
 	visibility: hidden;
 	z-index: 1;
@@ -95,10 +95,11 @@ li:hover ul#desplegable {
 }
 
 #desplegable a:hover {
-	background: #00ffd5;
+	background: #0f2b09;
 }
+
 #desplegable a{
-	background-color:#af26ca;
+	background-color:#133e09;
 }
 
 /*Contenido*/
@@ -107,18 +108,42 @@ li:hover ul#desplegable {
     height: 979px;
 }
 .Panel_lateral{
-    background-color: #1100ffbd;
+    background-color: #2b5c3f;
     width: 20%;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    font: bold 12px/20px sans-serif;
 }
 
-.Contenedor_actividades{
-    background-color: #ff008c2d;
+.Panel_lateral ul, li{
+    padding: 0px;
+    margin: 0px;
+}
+.Panel_lateral ul{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.Panel_lateral a{
+    text-decoration: none;
+    color: white;
+}
+
+.Panel_lateral h3{
+    font-family: "Poppins", sans-serif;
+}
+.contenedor_actividades{
+    background-color: #c9e0d2;
     width: 80%;
     padding: 20px;
 }
 
-.Grid_actividades{
+.grid_actividades{
     display: grid;
     width: 100%;
     height: 100%;
@@ -126,13 +151,45 @@ li:hover ul#desplegable {
     column-gap: 1em;
     row-gap: 1em;
 }
+
 .Actividad{
-    background-color: #00ff73bd;
+    display: block;
+    position: relative;
+    background-color: #729e83;
+    border-radius: 1rem;
+    text-align: center; 
+}
+
+
+.Actividad img{
+    height: 226px;
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+.enlace_inferior{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);   
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 15px;
 }
 
 /*Pie de pagina*/
 .Pie_pagina{
     display: flex; 
     height: 130px;
-    background-color: #ffe6005b;
+    background-color: #aabeb9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie_pagina img{
+    height: 20px;
+    margin: 5px;
 }
