@@ -1,120 +1,139 @@
 body{
     margin: 0px;
+    /*En vez de usar el width 100% pongo un numero de pixeles determinado 
+    evitando que a veces se vea mal la pagina*/
     width: 1140px;
     margin-left: auto;
     margin-right: auto; 
+    /*Pongo una foto para lo que no cubro de contenido*/
+    background-image: linear-gradient(rgba(43, 92, 63, 0.5), rgba(170, 190, 185, 1)), url('../img/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /*Cabecera*/
-.contenedor_cabecera_entera{
-    background-color: #aabeb9;
-    height: 252px;
-    display: flex; 
-    padding: 20px;
-}
+    /*Contenedor de toda la cabecera*/
+    .contenedor_cabecera_entera{
+        background-color: #aabeb9;
+        height: 252px;
+        display: flex; 
+        padding: 20px;
+    }
 
-.logo img{
-    height: 232px;
-    width: auto;
-}
+    .logo img{
+        height: 232px;
+        width: auto;
+    }
 
-.contenedor_cabecera_titulo_menu{
-    width: 100%;
-}
+    /*Contenedor con los menus y cabecera*/
+    .contenedor_cabecera_titulo_menu{
+        width: 100%;
+    }
+        /*Usado para asignar el tamanio y posicion del titulo*/
+        .contenedor_titulo{
+            height: 55%;
+            position: relative;
+        }
 
-.contenedor_titulo{
-    height: 55%;
-    position: relative;
-}
+            .titulo{
+                margin: 0px;
+                position: absolute;
+                bottom: 0;
+                left: 20px;
+                font-family: "Poppins", sans-serif;
+            }
 
-.titulo{
-    margin: 0px;
-    position: absolute;
-    bottom: 0;
-    left: 20px;
-    font-family: "Poppins", sans-serif;
-}
+        /*Usado para asignar el tamanio y posicion de los menu*/
+        .contenedor_menu{
+            height: 45%;
+            position: relative;
+        }
 
-.contenedor_menu{
-    height: 45%;
-    position: relative;
-}
+            /*Ajustes del menu*/
+            .menu ul, .menu li {
+                margin: 0px;
+                padding: 0px;
+            }
 
-.menu ul, .menu li {
-	margin: 0px;
-	padding: 0px;
-}
+            .menu{ 
+                width: 100%;
+                position: absolute;
+                bottom: 0px;
+                left: 20px;
+            }
 
-.menu{ 
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    left: 20px;
-}
-.menu ul {
-	list-style: none;
-	width: 100%;
-}
-.menu li {
-	float: left;
-	position: relative;
-	width:auto;
-}
+            .menu ul {
+                list-style: none;
+                width: 100%;
+            }
+            
+            .menu li {
+                float: left;
+                position: relative;
+                width:auto;
+            }
 
-.menu a{
-	background: #2b5c3f;
-	color: #ffffff;
-	display: block;
-	padding: 10px 25px;
-	text-decoration: none;
-    font: bold 12px/20px sans-serif;
-	text-align: center;
-}
+            .menu a{
+                background: #2b5c3f;
+                color: #ffffff;
+                display: block;
+                padding: 10px 25px;
+                text-decoration: none;
+                font: bold 12px sans-serif;
+                text-align: center;
+            }
 
-.menu li:hover a{
-	background: #133e09;
-}
+            .menu li:hover a{
+                background: #133e09;
+            }
+            
+            /*Ajustes del menu desplegable*/
+            /*El menu desplegable es id por eso usa #*/
+            #desplegable {
+                opacity: 0;
+                position: absolute;
+                left: 0px;
+                top: 35px;
+                /*Sin seleccionar no es visible*/
+                visibility: hidden;
+                /*Solapa a otros elementos*/
+                z-index: 1;
+            }
 
-#desplegable {
-	opacity: 0;
-	position: absolute;
-    left: 0px;
-	top: 35px;
-	visibility: hidden;
-	z-index: 1;
-}
+            li:hover ul#desplegable {
+                /*Al pasar el raton por encima es visible*/
+                opacity: 1;
+                top: 34px;
+                visibility: visible;
+                }
 
-li:hover ul#desplegable {
-    opacity: 1;
-	top: 40px;
-	visibility: visible;
-}
+            #desplegable li {
+                width: 100%;
+            }
 
-#desplegable li {
-	width: 100%;
-}
+            #desplegable a:hover {
+                /*Cambia el color al pasar el raton por encima*/
+                background: #0f2b09;
+            }
 
-#desplegable a:hover {
-	background: #0f2b09;
-}
-
-#desplegable a{
-	background-color:#133e09;
-}
+            #desplegable a{
+                background-color:#133e09;
+            }
 
 /*Contenido*/
-.Contenido{
-    display: flex; 
-    height: 979px;
-}
-.Panel_lateral{
-    background-color: #2b5c3f;
-    width: 20%;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: center;
-    font: bold 12px/20px sans-serif;
-}
+    .Contenido{
+        display: flex; 
+        height: 979px;
+    }
+        .Panel_lateral{
+        background-color: #2b5c3f;
+        width: 20%;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        font: bold 12px/20px sans-serif;
+    }
 
 .Panel_lateral ul, li{
     padding: 0px;
@@ -160,6 +179,9 @@ li:hover ul#desplegable {
     text-align: center; 
 }
 
+.Actividad:hover{
+    background-color: #2b5c3f;
+}
 
 .Actividad img{
     height: 226px;
