@@ -17,19 +17,28 @@ body{
 /*Contenedor de toda la cabecera*/
 .contenedor_cabecera_entera{
     background-color: #aabeb9;
-    height: 252px;
+    height:15%;
     display: flex; 
     padding: 20px;
 }
 
+.logo {
+    width: 20%;
+    height: 100%;
+    margin: auto;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
 .logo img{
-    height: 232px;
-    width: auto;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /*Contenedor con los menus y cabecera*/
 .contenedor_cabecera_titulo_menu{
-    width: 100%;
+    width: 80%;
 }
 
 /*Usado para asignar el tamanio y posicion del titulo*/
@@ -73,7 +82,7 @@ body{
     list-style: none;
     width: 100%;
 }
-            
+
 .menu li {
     float: left;
     position: relative;
@@ -134,16 +143,16 @@ li:hover ul#desplegable {
 /*Contenido*/
 .contenido{
     display: flex; 
-    height: 979px;
+    height: 80%;
 }
 /*Panel lateral con enlaces externos*/
 .panel_lateral{
     background-color: #2b5c3f;
     width: 20%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0px 20px;
     text-align: center;
     font: bold 12px/20px sans-serif;
+    overflow: auto;
 }
 
 .panel_lateral ul, li{
@@ -183,14 +192,16 @@ li:hover ul#desplegable {
     column-gap: 1em;
     row-gap: 1em;
 }
+
 /*Actividades dentro del grid*/
 .actividad{
-    display: block;
+    min-height: 33%;
     position: relative;
     background-color: #729e83;
     border-radius: 1rem;
     text-align: center; 
 }
+
 /*Transiciones al pasar el raton encima*/
 .actividad:hover{
     background-color: #2b5c3f;
@@ -204,20 +215,28 @@ li:hover ul#desplegable {
 
 /*Imagenes del grid*/
 .actividad img{
-    height: 226px;
-    padding: 10px;
+    width: 90%;
+    height: 80%;
+    object-fit: cover;
+    padding-top: 10px;
     border-radius: 1rem;
+}
+
+/*El enlace ocupa todo el grid*/
+.enlace_total {
+    display: block;
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
 }
 
 /*Enlace de la parte inferior*/
 .enlace_inferior{
     /*Posicion*/
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: 15px;
-    width: 100%;
+    height: 17%;
     display: flex;
     justify-content: center;
+    align-items: flex-end; 
     /*Valores del tipo de letra*/
     text-decoration: none;
     color: black;   
@@ -228,7 +247,7 @@ li:hover ul#desplegable {
 /*Pie de pagina*/
 .pie_pagina{
     display: flex; 
-    height: 130px;
+    height: 5%;
     background-color: #aabeb9;
     display: flex;
     justify-content: center;

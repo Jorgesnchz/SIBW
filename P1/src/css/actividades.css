@@ -17,19 +17,28 @@ body{
 /*Contenedor de toda la cabecera*/
 .contenedor_cabecera_entera{
     background-color: #aabeb9;
-    height: 252px;
+    height:15%;
     display: flex; 
     padding: 20px;
 }
 
+.logo {
+    width: 20%;
+    height: 100%;
+    margin: auto;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
 .logo img{
-    height: 232px;
-    width: auto;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /*Contenedor con los menus y cabecera*/
 .contenedor_cabecera_titulo_menu{
-    width: 100%;
+    width: 80%;
 }
 
 /*Usado para asignar el tamanio y posicion del titulo*/
@@ -73,6 +82,7 @@ body{
     list-style: none;
     width: 100%;
 }
+
 .menu li {
     float: left;
     position: relative;
@@ -133,16 +143,16 @@ li:hover ul#desplegable {
 /*Contenido*/
 .contenido{
     display: flex; 
-    height: 979px;
+    height: 80%;
 }
 /*Panel lateral con enlaces externos*/
 .panel_lateral{
     background-color: #2b5c3f;
     width: 20%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0px 20px;
     text-align: center;
     font: bold 12px/20px sans-serif;
+    overflow: auto;
 }
 
 .panel_lateral ul, li{
@@ -172,31 +182,26 @@ li:hover ul#desplegable {
     background-color: #c9e0d2;
     width: 80%;
     padding: 20px;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    column-gap: 0em;
+    row-gap: 0em;
 }
 
 .contenedor_informacion h1, h2{
     font-family: "Poppins", sans-serif;
+    margin: 0px;
 }
 
-
 .cabecera_actividad{
-    height: 20%;
-    width: 100%;
+    grid-row: 1;
 }
 
 .contenedor_fotos_texto{
-    height: 70%;
-    width: 100%;
-    font-size: 17px;
+    font-size: 15px;
     font-family: "Montserrat", sans-serif;
-}
-
-.contenedor_fotos_texto img{
-    height: auto;
-    width: 200px;
-    border-radius: 1rem;
-    padding: 10px;
-
+    grid-row: 2/8;
+    overflow: auto;
 }
 
 #foto_arriba{
@@ -205,24 +210,36 @@ li:hover ul#desplegable {
     background-color: #729e83;
     float: right;
     border-radius: 1rem;
-}
-
-#foto_abajo{
-    width: 220px;
-    height: 270px;
-    background-color: #729e83;
-    float: left;
-    border-radius: 1rem;
-
-}
-
-.botones{
-    height: 10%;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+#foto_abajo{
+    width: 200px;
+    height: 220px;
+    background-color: #729e83;
+    border-radius: 1rem;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#foto_arriba img , #foto_abajo img{ 
+    height: 90%;
+    width: 90%;
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 8;
+}
+
 .botones a{
     text-decoration: none;
 }
@@ -236,7 +253,7 @@ li:hover ul#desplegable {
 /*Pie de pagina*/
 .pie_pagina{
     display: flex; 
-    height: 130px;
+    height: 5%;
     background-color: #aabeb9;
     display: flex;
     justify-content: center;
