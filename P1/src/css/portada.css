@@ -5,7 +5,7 @@ body{
     width: 1140px;
     margin-left: auto;
     margin-right: auto; 
-    /*Pongo una foto para lo que no cubro de contenido*/
+    /*Imagen para el background*/
     background-image: linear-gradient(rgba(43, 92, 63, 0.5), rgba(170, 190, 185, 1)), url('../img/fondo.jpg');
     background-size: cover;
     background-position: center;
@@ -22,6 +22,7 @@ body{
     padding: 20px;
 }
 
+/*Logo de la pagina con sus ajustes*/
 .logo {
     width: 20%;
     height: 100%;
@@ -74,8 +75,7 @@ body{
     width: 100%;
     position: absolute;
     bottom: 0px;
-    left: 20px;
-    
+    left: 20px;    
 }
 
 .menu ul {
@@ -92,17 +92,17 @@ body{
 /*Ajustes de los enlaces del menu*/
 .menu a{
     background: #2b5c3f;
-    color: #c9e0d2;
     /*Ajustes de estilo*/
+    color: #c9e0d2;
     text-decoration: none;
     font: bold 12px sans-serif;
     /*Ajustes de posicion*/
     text-align: center;
     padding: 10px 25px;
     display: block;
-
 }
 
+/*Ajustes de cuando se pasa el raton por encima en el menu*/
 .menu li:hover a{
     background: #133e09;
 }
@@ -130,9 +130,8 @@ li:hover ul#desplegable {
 #desplegable li {
     width: 100%;
 }
-
+/*Cambia el color al pasar el raton por encima*/
 #desplegable a:hover {
-    /*Cambia el color al pasar el raton por encima*/
     background: #0f2b09;
 }
 
@@ -148,18 +147,22 @@ li:hover ul#desplegable {
 /*Panel lateral con enlaces externos*/
 .panel_lateral{
     background-color: #2b5c3f;
+    /*Anchura del panel lateral*/
     width: 20%;
+    /*Estilo del panel*/
     padding: 0px 20px;
     text-align: center;
     font: bold 12px/20px sans-serif;
     overflow: auto;
 }
 
+
 .panel_lateral ul, li{
     padding: 0px;
     margin: 0px;
 }
 
+/*Ajustes del estilo del panel lateral*/
 .panel_lateral ul{
     height: 100%;
     list-style: none;
@@ -168,6 +171,7 @@ li:hover ul#desplegable {
     justify-content: space-evenly;
 }
 
+/*Ajustes para los enlaces*/
 .panel_lateral a{
     text-decoration: none;
     color: #c9e0d2;
@@ -177,17 +181,20 @@ li:hover ul#desplegable {
     font-family: "Poppins", sans-serif;
 }
 
-/*Grid de las actividades*/
+/*Contenedor del grid de las actividades*/
 .contenedor_actividades{
     background-color: #c9e0d2;
+    /*Anchura del grid de actividades*/
     width: 80%;
     padding: 20px;
 }
 
+/*Grid de actividades*/
 .grid_actividades{
     display: grid;
     width: 100%;
     height: 100%;
+    /*Grid de 3 columnas y deja separación entre actividades*/
     grid-template-columns:  1fr 1fr 1fr;
     column-gap: 1em;
     row-gap: 1em;
@@ -195,7 +202,11 @@ li:hover ul#desplegable {
 
 /*Actividades dentro del grid*/
 .actividad{
+    /*Usada para que cuando el tamanio es demasiado 
+    pequenio se adapten las actividades, si se quieren aniadir mas
+    hay que hacer (100/nºfilas)*100 */
     min-height: 33%;
+    /*Ajustes de estilo*/
     position: relative;
     background-color: #729e83;
     border-radius: 1rem;
@@ -208,12 +219,13 @@ li:hover ul#desplegable {
     transition: background-color 0.5s ease;
 }
 
+/*Transicion del enlace inferior*/
 .actividad:hover > .enlace_inferior{
     color:white;
     transition: color  0.5s ease;
 }
 
-/*Imagenes del grid*/
+/*Ajustes de estilo de las imagenes del grid*/
 .actividad img{
     width: 90%;
     height: 80%;
@@ -237,7 +249,7 @@ li:hover ul#desplegable {
     display: flex;
     justify-content: center;
     align-items: flex-end; 
-    /*Valores del tipo de letra*/
+    /*Valores de estilo*/
     text-decoration: none;
     color: black;   
     font-family: "Poppins", sans-serif;
@@ -254,6 +266,7 @@ li:hover ul#desplegable {
     align-items: center;
 }
 
+/*Logo copyright tamanio*/
 .pie_pagina img{
     height: 20px;
     margin: 5px;

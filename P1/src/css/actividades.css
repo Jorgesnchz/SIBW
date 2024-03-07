@@ -5,7 +5,7 @@ body{
     width: 1140px;
     margin-left: auto;
     margin-right: auto; 
-    /*Pongo una foto para lo que no cubro de contenido*/
+    /*Imagen para el background*/
     background-image: linear-gradient(rgba(43, 92, 63, 0.5), rgba(170, 190, 185, 1)), url('../img/fondo.jpg');
     background-size: cover;
     background-position: center;
@@ -22,6 +22,7 @@ body{
     padding: 20px;
 }
 
+/*Logo de la pagina con sus ajustes*/
 .logo {
     width: 20%;
     height: 100%;
@@ -74,8 +75,7 @@ body{
     width: 100%;
     position: absolute;
     bottom: 0px;
-    left: 20px;
-    
+    left: 20px;    
 }
 
 .menu ul {
@@ -92,17 +92,17 @@ body{
 /*Ajustes de los enlaces del menu*/
 .menu a{
     background: #2b5c3f;
-    color: #c9e0d2;
     /*Ajustes de estilo*/
+    color: #c9e0d2;
     text-decoration: none;
     font: bold 12px sans-serif;
     /*Ajustes de posicion*/
     text-align: center;
     padding: 10px 25px;
     display: block;
-
 }
 
+/*Ajustes de cuando se pasa el raton por encima en el menu*/
 .menu li:hover a{
     background: #133e09;
 }
@@ -130,9 +130,8 @@ li:hover ul#desplegable {
 #desplegable li {
     width: 100%;
 }
-
+/*Cambia el color al pasar el raton por encima*/
 #desplegable a:hover {
-    /*Cambia el color al pasar el raton por encima*/
     background: #0f2b09;
 }
 
@@ -148,18 +147,22 @@ li:hover ul#desplegable {
 /*Panel lateral con enlaces externos*/
 .panel_lateral{
     background-color: #2b5c3f;
+    /*Anchura del panel lateral*/
     width: 20%;
+    /*Estilo del panel*/
     padding: 0px 20px;
     text-align: center;
     font: bold 12px/20px sans-serif;
     overflow: auto;
 }
 
+
 .panel_lateral ul, li{
     padding: 0px;
     margin: 0px;
 }
 
+/*Ajustes del estilo del panel lateral*/
 .panel_lateral ul{
     height: 100%;
     list-style: none;
@@ -168,6 +171,7 @@ li:hover ul#desplegable {
     justify-content: space-evenly;
 }
 
+/*Ajustes para los enlaces*/
 .panel_lateral a{
     text-decoration: none;
     color: #c9e0d2;
@@ -182,32 +186,39 @@ li:hover ul#desplegable {
     background-color: #c9e0d2;
     width: 80%;
     padding: 20px;
+    /*Uso grid para facilitar que la pagina 
+    sea mas responsive*/
     display: grid;
     grid-template-rows: repeat(8, 1fr);
-    column-gap: 0em;
-    row-gap: 0em;
 }
 
-.contenedor_informacion h1, h2{
+/*Ajustes de estilo para los titulos*/
+.cabecera_actividad{    
+    /*La cabecera ocupa una fila completa*/
+    grid-row: 1;
     font-family: "Poppins", sans-serif;
     margin: 0px;
 }
 
-.cabecera_actividad{
-    grid-row: 1;
-}
-
+/*Informacion de la actividad con fotos*/
 .contenedor_fotos_texto{
     font-size: 15px;
     font-family: "Montserrat", sans-serif;
+    /*Ocupa desde la fila 2 hasta la 8*/
     grid-row: 2/8;
+    /*En caso de que el tamanio sea demasiado 
+    pequenio se adapta aniadiendo un scroll*/
     overflow: auto;
 }
 
+/*La foto de arriba es un cuadrado 
+que esta sobre un contenedor*/
 #foto_arriba{
+    background-color: #729e83;
+    /*Ajustes de tamanio*/
     width: 220px;
     height: 220px;
-    background-color: #729e83;
+    /*Ajustes de posiciom*/
     float: right;
     border-radius: 1rem;
     display: flex;
@@ -215,10 +226,14 @@ li:hover ul#desplegable {
     align-items: center;
 }
 
+/*La foto de abajo es un rectangulo
+sobre un contendor*/
 #foto_abajo{
+    background-color: #729e83;
+    /*Ajustes de tamanio*/
     width: 200px;
     height: 220px;
-    background-color: #729e83;
+    /*Ajustes de posicion*/
     border-radius: 1rem;
     float: left;
     display: flex;
@@ -230,13 +245,17 @@ li:hover ul#desplegable {
     height: 90%;
     width: 90%;
     padding: 10px;
+    /*Las imagenes se ven redondeadas*/
     border-radius: 1rem;
 }
 
+/*Ajustes para los botones*/
 .botones{
+    /*Ajustes para el centrado*/
     display: flex;
     justify-content: center;
     align-items: center;
+    /*Los botones ocupan la ultima fila del grid*/
     grid-row: 8;
 }
 
@@ -244,6 +263,7 @@ li:hover ul#desplegable {
     text-decoration: none;
 }
 
+/*Ajustes de estilo de las imagenes*/
 .botones img{
     height: 40px;
     width: auto;
@@ -260,6 +280,7 @@ li:hover ul#desplegable {
     align-items: center;
 }
 
+/*Logo copyright tamanio*/
 .pie_pagina img{
     height: 20px;
     margin: 5px;
