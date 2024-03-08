@@ -33,7 +33,7 @@ body{
 }
 
 /*Oculta elementos del html*/
-.contenedor_cabecera_titulo_menu , .panel_lateral, .botones{
+.contenedor_cabecera_titulo_menu , .panel_lateral, .botones, .derechos{
     display: none;
 }
 
@@ -60,7 +60,7 @@ body{
     font-family: "Roboto", sans-serif;
     /*Ocupa desde la fila 2 hasta la 8*/
     grid-row: 2/7;
-     /*En caso de que el tamanio sea demasiado 
+    /*En caso de que el tamanio sea demasiado 
     pequenio se adapta aniadiendo un scroll*/
     overflow: auto;
 }
@@ -104,7 +104,7 @@ sobre un contendor*/
 }
 
 /*Ajustes para el codigo de barras*/
-.pie_pagina{
+.codigo_barras{
     height: auto;
     /*Lo alinea en el centro del contenedor vertical y horizontalmente*/
     display: flex;

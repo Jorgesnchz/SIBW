@@ -191,7 +191,16 @@ li:hover ul#desplegable {
     display: grid;
     grid-template-rows: repeat(8, 1fr);
 }
-
+/*En el caso de que la pantalla sea muy pequeña no 
+aparece el panel lateral y el grid ocupa su sitio*/
+@media only screen and (max-width: 1000px) {
+    .panel_lateral {
+        display: none;
+    }
+    .contenedor_informacion{
+        width: 100%;
+    }
+}
 /*Ajustes de estilo para los titulos*/
 .cabecera_actividad{    
     /*La cabecera ocupa una fila completa*/
@@ -281,7 +290,12 @@ sobre un contendor*/
 }
 
 /*Logo copyright tamanio*/
-.pie_pagina img{
+.derechos img{
     height: 20px;
     margin: 5px;
+}
+
+/*Evito que el codigo de barras aparezca*/
+.codigo_barras{
+    display: none;
 }

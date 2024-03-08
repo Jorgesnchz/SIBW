@@ -145,6 +145,7 @@ li:hover ul#desplegable {
     height: 80%;
 }
 /*Panel lateral con enlaces externos*/
+
 .panel_lateral{
     background-color: #2b5c3f;
     /*Anchura del panel lateral*/
@@ -187,6 +188,17 @@ li:hover ul#desplegable {
     /*Anchura del grid de actividades*/
     width: 80%;
     padding: 20px;
+}
+
+/*En el caso de que la pantalla sea muy pequeña no 
+aparece el panel lateral y el grid ocupa su sitio*/
+@media only screen and (max-width: 1000px) {
+    .panel_lateral {
+        display: none;
+    }
+    .contenedor_actividades{
+        width: 100%;
+    }
 }
 
 /*Grid de actividades*/
