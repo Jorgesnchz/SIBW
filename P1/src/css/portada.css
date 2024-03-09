@@ -192,7 +192,7 @@ li:hover ul#desplegable {
 
 /*En el caso de que la pantalla sea muy pequeña no 
 aparece el panel lateral y el grid ocupa su sitio*/
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 800px) {
     .panel_lateral {
         display: none;
     }
@@ -200,6 +200,8 @@ aparece el panel lateral y el grid ocupa su sitio*/
         width: 100%;
     }
 }
+
+
 
 /*Grid de actividades*/
 .grid_actividades{
@@ -210,6 +212,14 @@ aparece el panel lateral y el grid ocupa su sitio*/
     grid-template-columns:  1fr 1fr 1fr;
     column-gap: 1em;
     row-gap: 1em;
+}
+
+/*En el caso de que sea demasiado pequenia la 
+pantalla muestra las actividades de dos en dos*/
+@media only screen and (max-width: 600px) {
+    .grid_actividades{
+        grid-template-columns:  1fr 1fr;
+    }
 }
 
 /*Actividades dentro del grid*/
@@ -223,6 +233,19 @@ aparece el panel lateral y el grid ocupa su sitio*/
     background-color: #729e83;
     border-radius: 1rem;
     text-align: center; 
+}
+
+/*Si es demasiado pequenia para dos 
+en dos lo hace de uno en uno y con un scroll 
+para que se puedan ver las actividades*/
+@media only screen and (max-width: 400px) {
+    .grid_actividades{
+        grid-template-columns:  1fr;
+        overflow-y: auto;
+    }
+    .actividad{
+        min-height: 200px;
+    }
 }
 
 /*Transiciones al pasar el raton encima*/

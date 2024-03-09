@@ -78,6 +78,7 @@ que esta sobre un contenedor*/
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 15px;
 }
 
 /*La foto de abajo es un rectangulo
@@ -93,6 +94,7 @@ sobre un contendor*/
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 15px; 
 }
 
 #foto_arriba img , #foto_abajo img{ 
