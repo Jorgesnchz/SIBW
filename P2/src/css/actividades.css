@@ -145,7 +145,6 @@ li:hover ul#desplegable {
     height: 80%;
 }
 /*Panel lateral con enlaces externos*/
-
 .panel_lateral{
     background-color: #2b5c3f;
     /*Anchura del panel lateral*/
@@ -182,111 +181,104 @@ li:hover ul#desplegable {
     font-family: "Poppins", sans-serif;
 }
 
-/*Contenedor del grid de las actividades*/
-.contenedor_actividades{
+/*Informacion actividad*/
+.contenedor_informacion{
     background-color: #c9e0d2;
-    /*Anchura del grid de actividades*/
     width: 80%;
     padding: 20px;
+    /*Uso grid para facilitar que la pagina 
+    sea mas responsive*/
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
 }
-
 /*En el caso de que la pantalla sea muy pequeña no 
 aparece el panel lateral y el grid ocupa su sitio*/
 @media only screen and (max-width: 800px) {
     .panel_lateral {
         display: none;
     }
-    .contenedor_actividades{
+    .contenedor_informacion{
         width: 100%;
     }
 }
-
-/*Grid de actividades*/
-.grid_actividades{
-    display: grid;
-    width: 100%;
-    height: 100%;
-    /*Grid de 3 columnas y deja separación entre actividades*/
-    grid-template-columns:  1fr 1fr 1fr;
-    column-gap: 1em;
-    row-gap: 1em;
+/*Ajustes de estilo para los titulos*/
+.cabecera_actividad{    
+    /*La cabecera ocupa una fila completa*/
+    grid-row: 1;
+    font-family: "Poppins", sans-serif;
+    margin: 0px;
 }
 
-/*En el caso de que sea demasiado pequenia la 
-pantalla muestra las actividades de dos en dos*/
-@media only screen and (max-width: 600px) {
-    .grid_actividades{
-        grid-template-columns:  1fr 1fr;
-    }
+/*Informacion de la actividad con fotos*/
+.contenedor_fotos_texto{
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    /*Ocupa desde la fila 2 hasta la 8*/
+    grid-row: 2/8;
+    /*En caso de que el tamanio sea demasiado 
+    pequenio se adapta aniadiendo un scroll*/
+    overflow: auto;
 }
 
-/*Actividades dentro del grid*/
-.actividad{
-    /*Usada para que cuando el tamanio es demasiado 
-    pequenio se adapten las actividades, si se quieren aniadir mas
-    hay que hacer (100/nºfilas)*100 */
-    min-height: 33%;
-    /*Ajustes de estilo*/
-    position: relative;
+/*La foto de arriba es un cuadrado 
+que esta sobre un contenedor*/
+#foto_arriba{
     background-color: #729e83;
+    /*Ajustes de tamanio*/
+    width: 220px;
+    height: 220px;
+    /*Ajustes de posiciom*/
+    float: right;
     border-radius: 1rem;
-    text-align: center; 
-}
-
-/*Si es demasiado pequenia para dos 
-en dos lo hace de uno en uno y con un scroll 
-para que se puedan ver las actividades*/
-@media only screen and (max-width: 400px) {
-    .grid_actividades{
-        grid-template-columns:  1fr;
-        overflow-y: auto;
-    }
-    .actividad{
-        min-height: 200px;
-    }
-}
-
-/*Transiciones al pasar el raton encima*/
-.actividad:hover{
-    background-color: #2b5c3f;
-    transition: background-color 0.5s ease;
-}
-
-/*Transicion del enlace inferior*/
-.actividad:hover > .enlace_inferior{
-    color:white;
-    transition: color  0.5s ease;
-}
-
-/*Ajustes de estilo de las imagenes del grid*/
-.actividad img{
-    width: 90%;
-    height: 80%;
-    object-fit: cover;
-    padding-top: 10px;
-    border-radius: 1rem;
-}
-
-/*El enlace ocupa todo el grid*/
-.enlace_total {
-    display: block;
-    width: 100%; 
-    height: 100%; 
-    position: absolute; 
-}
-
-/*Enlace de la parte inferior*/
-.enlace_inferior{
-    /*Posicion*/
-    height: 17%;
     display: flex;
     justify-content: center;
-    align-items: flex-end; 
-    /*Valores de estilo*/
+    align-items: center;
+    margin-left: 15px;
+}
+
+/*La foto de abajo es un rectangulo
+sobre un contendor*/
+#foto_abajo{
+    background-color: #729e83;
+    /*Ajustes de tamanio*/
+    width: 200px;
+    height: 220px;
+    /*Ajustes de posicion*/
+    border-radius: 1rem;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+#foto_arriba img , #foto_abajo img{ 
+    height: 90%;
+    width: 90%;
+    padding: 10px;
+    /*Las imagenes se ven redondeadas*/
+    border-radius: 1rem;
+}
+
+/*Ajustes para los botones*/
+.botones{
+    /*Ajustes para el centrado*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Los botones ocupan la ultima fila del grid*/
+    grid-row: 8;
+}
+
+.botones a{
     text-decoration: none;
-    color: black;   
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
+}
+
+/*Ajustes de estilo de las imagenes*/
+.botones img{
+    height: 40px;
+    width: auto;
+    padding: 20px;
 }
 
 /*Pie de pagina*/
@@ -300,7 +292,12 @@ para que se puedan ver las actividades*/
 }
 
 /*Logo copyright tamanio*/
-.pie_pagina img{
+.derechos img{
     height: 20px;
     margin: 5px;
+}
+
+/*Evito que el codigo de barras aparezca*/
+.codigo_barras{
+    display: none;
 }
