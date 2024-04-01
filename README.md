@@ -18,7 +18,7 @@ En esta se podrá ver el guión de la misma junto con una carpeta src dentro de 
 ### [Práctica 1: ](https://github.com/Jorgesnchz/SIBW/tree/main/P1)
 - HTML y CSS3
 
-### Práctica 2:
+### [Práctica 2: ](https://github.com/Jorgesnchz/SIBW/tree/main/P2)
 - JavaScript
 
 ### Práctica 3:
