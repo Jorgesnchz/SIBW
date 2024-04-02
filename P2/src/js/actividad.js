@@ -17,10 +17,15 @@ function mostrarValoraciones() {
     //Si el panel de valoraciones esta visible se oculta
     else{
         //Desaparece el panel de valoraciones y el formulario de valoraciones
+        
         desaparece(formularioValoracion);
         desaparece(panelValoraciones);
+
         //Quita el difuminado
-        quitarDifuminado();
+        setTimeout(function() {
+            quitarDifuminado();;
+        }, 500);
+       
     }
 }
 
@@ -54,7 +59,7 @@ function desaparece(element) {
 function difumina() {
     var elements = document.querySelectorAll('.contenedor_informacion > *'); 
     for (var i = 0; i < elements.length; i++) {
-        if (window.getComputedStyle(elements[i]).zIndex < '1' ) {
+        if (window.getComputedStyle(elements[i]).zIndex !== '1' ) {
             elements[i].classList.add('blur');
         }
     }
@@ -64,6 +69,7 @@ function difumina() {
 function quitarDifuminado() {
     var elements = document.querySelectorAll('.contenedor_informacion > *');
     for (var i = 0; i < elements.length; i++) {
+
         elements[i].classList.remove('blur');
     }
 }

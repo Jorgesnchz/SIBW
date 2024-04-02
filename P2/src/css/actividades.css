@@ -157,7 +157,7 @@ li:hover ul#desplegable {
 /*Contenido*/
 .contenido{
     display: flex; 
-    height: 80%;
+    height: auto;
 }
 /*Panel lateral con enlaces externos*/
 .panel_lateral{
@@ -204,7 +204,7 @@ li:hover ul#desplegable {
     /*Uso grid para facilitar que la pagina 
     sea mas responsive*/
     display: grid;
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-template-columns: repeat(6, 1fr);
     position: relative; /* Agregar posición relativa */
 }
@@ -224,13 +224,14 @@ aparece el panel lateral y el grid ocupa su sitio*/
 #panel_valoraciones{
     /*Ajustes de posicion*/	
     z-index: 1; /* Se sitúa por encima del resto, pero debajo del menu desplegable */
-    grid-row: 1/9;
+    grid-row: 1/5;
     grid-column: 5/7;
     /*Ajustes de estilo*/
     background-color: #7f9d8a;
     border-radius: 0.5rem 0 0 0.5rem;
     /*Añade un scroll por si se pasa del espacio*/
     overflow: auto;
+    margin: 0px;
 }
 
 #panel_valoraciones h3 {
@@ -262,11 +263,11 @@ aparece el panel lateral y el grid ocupa su sitio*/
 /*Formulario de valoracion*/
 #formulario_valoracion{
     /*Ajustes de posicion*/
-    margin: 20px;
-    padding: 10px;
+    border: 20px;
+    padding-left: 10px;
     z-index: 1;
     grid-column: 1/4;
-    grid-row: 2/5;
+    grid-row: 2/3;
     /*Ajustes de estilo*/
     background-color: #789682;
     border-radius: 1rem;
@@ -335,11 +336,10 @@ aparece el panel lateral y el grid ocupa su sitio*/
     font-size: 15px;
     font-family: "Montserrat", sans-serif;
     /*Ocupa desde la fila 2 hasta la 8*/
-    grid-row: 2/8;
+    grid-row: 2/4;
     grid-column: 1/7;
     /*En caso de que el tamanio sea demasiado 
     pequenio se adapta aniadiendo un scroll*/
-    overflow: auto;
     padding: 20px 20px 20px 0px;
 }
 
@@ -390,7 +390,7 @@ sobre un contendor*/
     justify-content: center;
     align-items: center;
     /*Los botones ocupan la ultima fila del grid*/
-    grid-row: 8;
+    grid-row: 4;
     grid-column: 1/7;
     padding: 20px 20px 20px 0px;
 }
