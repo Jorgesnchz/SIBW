@@ -13,8 +13,8 @@ En esta documentación, se detalla la organización de archivos y se describe el
   - Dentro de esta carpeta se encuentran los estilos CSS utilizados para el sitio web.
   - Se han implementado 3 modelos de paginas diferentes, cada uno con su respectivo archivo CSS.
 
-- El codigo JavaScript esta ubicado en la carpte '/src/JavaScript'
-  - Dentro de esta carpeta se encuentra el codigo usados para el panel de comentarios de las actividades.
+- El codigo JavaScript esta ubicado en la carpte '/src/js'
+  - Dentro de esta carpeta se encuentra el codigo usado para el panel de comentarios de las actividades.
 ## Responsive Design
 
 - Las paginas web son responsive.

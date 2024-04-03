@@ -12,8 +12,6 @@ body{
     background-attachment: fixed;
 }
 
-/*Cabecera*/
-    
 /*Contenedor de toda la cabecera*/
 .contenedor_cabecera_entera{
     background-color: #aabeb9;
@@ -123,7 +121,6 @@ body{
 }
 
 /*Ajustes del menu desplegable*/
-/*El menu desplegable es id por eso usa #*/
 #desplegable {
     opacity: 0;
     position: absolute;
@@ -171,7 +168,6 @@ li:hover ul#desplegable {
     overflow: auto;
 }
 
-
 .panel_lateral ul, li{
     padding: 0px;
     margin: 0px;
@@ -209,8 +205,25 @@ li:hover ul#desplegable {
     position: relative; /* Agregar posición relativa */
 }
 
+
+
+/*Panel de valoraciones*/
+#panel_valoraciones{
+    /*Ajustes de posicion*/	
+    z-index: 1;
+    grid-row: 1/5;
+    grid-column: 5/7;
+    /*Ajustes de estilo*/
+    background-color: #7f9d8a;
+    border-radius: 0.5rem 0 0 0.5rem;
+    /*Añade un scroll por si se pasa del espacio*/
+    max-height: 930px;
+    overflow: auto;
+}
+
 /*En el caso de que la pantalla sea muy pequeña no 
-aparece el panel lateral y el grid ocupa su sitio*/
+aparece el panel lateral y el grid ocupa su sitio
+ademas de adaptarl tamaño del panel de valoraciones*/
 @media only screen and (max-width: 800px) {
     .panel_lateral {
         display: none;
@@ -218,22 +231,10 @@ aparece el panel lateral y el grid ocupa su sitio*/
     .contenedor_informacion{
         width: 100%;
     }
+    #panel_valoraciones{
+        max-height: 850px;
+    }
 }
-
-/*Panel de valoraciones*/
-#panel_valoraciones{
-    /*Ajustes de posicion*/	
-    z-index: 1; /* Se sitúa por encima del resto, pero debajo del menu desplegable */
-    grid-row: 1/5;
-    grid-column: 5/7;
-    /*Ajustes de estilo*/
-    background-color: #7f9d8a;
-    border-radius: 0.5rem 0 0 0.5rem;
-    /*Añade un scroll por si se pasa del espacio*/
-    overflow: auto;
-    margin: 0px;
-}
-
 #panel_valoraciones h3 {
     font-family: "Poppins", sans-serif;
     margin: 10px;
@@ -245,16 +246,9 @@ aparece el panel lateral y el grid ocupa su sitio*/
     background-color: #749287;
     border-radius: 1rem;
     margin: 10px;
-    padding: 10px;
 }
 
-.valoracion h5{
-    font-family: "Poppins", sans-serif;
-    margin: 5px;
-    color : #262c28;
-}
-
-.valoracion p{
+.valoracion h5, p{
     font-family: "Montserrat", sans-serif;
     margin: 5px;
     color : #262c28;
@@ -273,22 +267,30 @@ aparece el panel lateral y el grid ocupa su sitio*/
     border-radius: 1rem;
 }
 
+#formulario_valoracion form{
+    margin: 0px;  
+    height: 55%;
+}
+
 #formulario_valoracion label, h3, button{
     font-family: "Poppins", sans-serif;   
 }
 
 #formulario_valoracion h3{
-    margin: 5px;
+    border: 5px;
 }
 
+/*Ajustes de los campos del formulario*/
 #nombre, #email, #comentario{
-    margin: 10px;
+    border: 10px;
     border-radius: 0.5rem;
+    background-color: #c9e0d2;
 }
 
 #comentario{
-    height: 20%;
-    width: 90%;
+    display: block;
+    margin: auto;
+    width: 95%;
     /*Evita que se pueda redimensionar el cuadro de texto del comentario*/
     resize: none;
 }
@@ -303,6 +305,8 @@ aparece el panel lateral y el grid ocupa su sitio*/
     /*Ajustes de posicion*/
     display: block;
     margin: auto;
+    height: 20%;
+    margin-top: 10px;
 }
 
 /*Dialogo modal*/
@@ -310,15 +314,15 @@ aparece el panel lateral y el grid ocupa su sitio*/
     /*Ajustes de posicion*/
     z-index: 3;
     grid-column: 1/4;
-    grid-row: 3;
-    margin: 30px;
+    grid-row: 2;
     padding: 20px;
     /*Ajustes de estilo*/
     background-color: #0f2b09;
     color : #c9e0d2;
     border-radius: 1rem;
     text-align: center;
-    
+    margin: auto;
+    height: 30px;
 }
 
 /*Ajustes de estilo para los titulos*/
