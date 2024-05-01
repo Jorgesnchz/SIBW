@@ -23,6 +23,7 @@ En esta documentación, se detalla la organización de archivos y se describe el
 
 - En la carpeta 'www/images' encontramos todas las imágenes que usa nuestro servidor.
 
+- Las páginas php las podemos encontrar en la carpeta 'www/'
 
 ## Ejecución
 
