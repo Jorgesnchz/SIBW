@@ -1,0 +1,101 @@
+{%extends 'padre.html'%}
+    {% block css%}
+            <link rel="stylesheet" href="styles/actividad.css">
+    {% endblock %}
+
+    {% block titulo %}
+        {{ actividad.nombre }}
+    {% endblock %}
+    
+    {% block script %}
+        <script src="scripts/actividad.js"></script>
+    {% endblock %}
+
+    {% block menu %}
+        <div class="contenedor_menu">
+            <nav class="menu">
+                <ul>
+                    <li><a href="http://localhost">Inicio</a></li>
+                    <li><a href="https://parks.wa.gov/about/contact-us">Contacto</a></li>
+                    <li><a>Actividades</a>
+                        <!--Menu desplegable-->
+                        <ul id="desplegable">
+                            {% for actividadLista in listaActividades%}
+                            <li><a href="{{ actividadLista.enlace }}">{{ actividadLista.nombre }}</a></li>
+                            {% endfor %}
+                        </ul>    
+                    </li>
+                    <li><button type="button" onclick="mostrarValoraciones()">Valoraciones</button></li>
+                </ul>
+            </nav>
+        </div>
+    {% endblock %}
+
+    {% block contenido %}
+            <!-- Texto + fotos actividad -->
+            <div class="contenedor_informacion">
+                <!--Titulo precio y fecha-->
+                <div class="cabecera_actividad">
+                    <h1 style="font-size: 40px;">{{ actividad.nombre }} </h1>
+                    <h2 style="font-size: 25px;">{{ actividad.precio }} - {{ actividad.fecha }}</h2>
+                </div>
+                <!--Texto y fotos-->
+                <div class="contenedor_fotos_texto">
+                    <div id="foto_arriba">
+
+                            {% if random_image == 1 %}
+                                <img src="{{ actividad.imagen1 }}">
+                            {% elseif random_image == 2 %}
+                                <img src="{{ actividad.imagen2 }}">
+                            {% elseif random_image == 3 %}
+                                <img src="{{ actividad.imagen3 }}">
+                            {% endif %}
+                    </div>
+                    <p>{{ actividad.descripcion|raw }}</p>
+                
+                </div>
+                <!--Botones de redes sociales e imprimir-->
+                <div class="botones">
+                    <a href="https://www.instagram.com/wastatepks/?hl=es">
+                        <img src="../../images/instagram.png">
+                    </a>
+                    <a href="https://twitter.com/nationalspark?lang=es">
+                        <img src="../images/X.png">
+                    </a>
+                    <a href="impresion.php?id={{id}}">
+                        <img src="../images/imprimir.png">
+                    </a>
+                </div>
+                <!-- Panel de valoraciones (inicialmente oculto) -->
+                <div id="panel_valoraciones" style="display: none;">
+                    <h3>Valoraciones</h3>
+                    {% for valoracion in valoraciones %}
+                        <!-- Aquí se mostrarán las valoraciones -->
+                        <div class="valoracion">
+                            <h5>{{ valoracion.nombre }}</h5>
+                            <p>{{ valoracion.comentario }}</p>
+                            <h5>{{ valoracion.fecha }}</h5>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Formulario de valoración -->
+                <div id="formulario_valoracion" style="display: none;">
+                    <h3>Deja tu valoración</h3>
+                    <form>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre"><br>
+                        
+                        <label for="email">E-mail:</label>
+                        <input type="text" id="email" name="email"><br>
+                        
+                        <label for="comentario">Comentario:</label><br>
+                        <textarea id="comentario" name="comentario" onkeyup="compruebaPalabras( {{ palabrasProhibidas|json_encode }} )"></textarea>
+                        
+                        <button type="button" onclick="aniadeValoracion()">Enviar</button>
+                    </form>
+                </div>
+                <!--Dialogo modal usado para mostrar mensajes-->
+                <div id="dialogo_modal" style="display: none;"></div>
+            </div>
+        </div>
+{% endblock %}
