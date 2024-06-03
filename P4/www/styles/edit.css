@@ -185,7 +185,7 @@ li:hover ul#desplegable {
     /*Ajustes de posicion*/	
     z-index: 5;
     position: absolute;
-    margin: 300px;
+    margin: 100px 300px 100px 300px;
 
 
     /*Ajustes de estilo*/
@@ -194,7 +194,6 @@ li:hover ul#desplegable {
     height: 500px;
     width: 600px;
 }
-
 
 /* Formulario de login */
 #login{
@@ -317,7 +316,7 @@ aparece el panel lateral y el grid ocupa su sitio*/
     .panel_lateral {
         display: none;
     }
-    .contenedor_contenido{
+    .contenedor_contenido, .contenedor_contenido_actividades{
         width: 100%;
     }
 }
