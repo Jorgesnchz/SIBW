@@ -1,0 +1,41 @@
+{%extends 'padre.html'%}
+
+    {% block script %}
+        <!-- Acciones js -->
+        {{ parent() }}
+        <script src="../scripts/comentarios.js"></script>
+    {% endblock %}
+    {% block css %}
+        <!-- Estilos css --> 
+        <link rel="stylesheet" href="../styles/edit.css">
+    {% endblock %}
+
+    {% block contenido %}
+        <div class = "contenedor_contenido">
+            <!-- Todas los comentarios de la web -->
+            <div class= "contenedor_comentarios">
+                {% for comentario in comentarios %}
+                    <div class="contenedor_comentario">
+                        <h3>{{comentario.nombre}}</h3>
+                        <h3>{{listaActividades[comentario.actividad_id-1].nombre}}</h3>
+                        <p>{{comentario.comentario}}</p>
+                        
+                        <!-- Botones de editar y borrar -->
+                        <button onclick="FormularioEditar({{comentario.id}})"><img src="../images/editar.png" alt="editar"></button>
+                        <a href="../controllers/elimina_comentario.php?id={{comentario.id}}"><img src="../images/borrar.png" alt="borrar"></a>
+                        
+                        <!-- Formulario de editar -->
+                        <div class="formulario">
+                            <form id="formulario_editar{{comentario.id}}" action="../controllers/edita_comentario.php" method="post" style="display: none;">
+                                <textarea type="textarea" name="comentario">{{comentario.comentario}}</textarea><br>
+                                <input type="textfield" name="nombre" value="{{comentario.nombre}}"><br>
+                                <input type="submit" value="Editar">
+                                <input type="hidden" name="id" value="{{comentario.id}}">
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %} 
+            </div>
+        </div>
+    {% endblock %}
+

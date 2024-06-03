@@ -1,0 +1,42 @@
+{% extends 'padre.html' %}
+    {% block css%}
+        <link rel="stylesheet" href="../styles/impresion.css">
+    {% endblock %}
+
+    {% block titulo%}
+        {{ actividad.nombre }}
+    {% endblock %}
+
+    {% block contenido%}
+            <!-- Texto + fotos actividad -->
+            <div class="contenedor_informacion">
+                <!--Titulo precio y fecha-->
+                <div class="cabecera_actividad">
+                    <h1 style="font-size: 40px;">{{ actividad.nombre }} </h1>
+                    <h2 style="font-size: 25px;">{{ actividad.precio }} - {{ actividad.fecha }}</h2>
+                </div>
+                <!--Texto y fotos-->
+                <div class="contenedor_fotos_texto">
+                    <div id="foto_arriba">
+                        {% if random_image == 1 %}
+                            <img src="{{ actividad.imagenes[0] }}">
+                        {% elseif random_image == 2 %}
+                            <img src="{{ actividad.imagenes[1] }}">
+                        {% elseif random_image == 3 %}
+                            <img src="{{ actividad.imagenes[2] }}">
+                        {% endif %}
+                    </div>
+                    <p>{{ actividad.descripcion|raw }}</p>
+                
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
+
+    {%block pie_pagina%}
+        <!-- Pie de pagina -->
+        <div class="codigo_barras">
+            <img src="../images/Codigo-Barras.png">
+        </div>
+    {% endblock %}

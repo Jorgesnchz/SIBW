@@ -1,0 +1,32 @@
+
+{% extends 'padre.html' %}
+    
+    {% block css %}
+        <link rel="stylesheet" href="../styles/portada.css">
+    {% endblock %}
+
+    {% block titulo %}
+        Washington National Parks
+    {% endblock %}
+    
+    {% block contenido %}
+        <div class="contenedor_actividades"> 
+            <div class="grid_actividades">
+                
+                <!--Actividades del grid-->
+                {% for actividadLista in listaActividades %}
+                <div class="actividad">
+                    <a class="enlace_total", href="{{ actividadLista.enlace }}"></a>
+                    <img src="../{{ actividadLista.imagen }}">
+                    <!-- El texto inferior es enlace para que no se puedan seleccionar las lineas -->
+                    <a class="enlace_inferior"href="{{ actividadLista.enlace}}"> {{ actividadLista.nombre }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div> 
+        {% if error %}
+        <script>
+            alert("{{ error }}");
+        </script>
+        {% endif %}
+    {% endblock %}

@@ -1,0 +1,129 @@
+{%extends 'padre.html'%}
+
+    {% block script %}
+        <!-- Funciones js -->
+        {{ parent() }}
+        <script src="../scripts/actividades.js"></script>
+    {% endblock %}
+    {% block css %} 
+        <!-- Estilos css -->
+        <link rel="stylesheet" href="../styles/edit.css">
+    {% endblock %}
+
+    {%block menu %}
+    <div class="contenedor_menu">
+        <!-- Menu con boton de añadir una nueva -->
+        <nav class="menu">
+            <ul>
+                <li><a href="http://localhost">Inicio</a></li>
+                <li><a href="https://parks.wa.gov/about/contact-us">Contacto</a></li>
+                <li><a>Actividades</a>
+                <!--Menu desplegable-->
+                <ul id="desplegable">
+                    {% for actividad in actividades %} 
+                        <li><a href="actividad.php?id={{ actividad.id }}">{{ actividad.nombre }}</a></li>
+                    {% endfor %}
+                </ul>
+                
+
+                </li>
+                {% if usuario %}
+                    <li><a href=perfil.php id="perfil">{{usuario}}</a></li>
+                {% endif %}
+
+                {% if tipo > 1 %}
+                    <li><a href="comentarios.php">Comentarios</a></li>
+                {% endif %}
+                {% if tipo > 2 %}
+                    <li><a href="actividades.php">Actividades</a></li>
+                {% endif %}
+                {% if tipo == 3%}
+                    <li><a href="usuarios.php">Usuarios</a></li>
+                {% endif %}
+
+                <li><button id="nueva" onclick=FormularioAddActividad()>Nueva</button></li>
+            </ul>
+        </nav>
+    </div>
+    {% endblock %}
+
+    {% block contenido %}
+        <!-- Formulario para añadir una nueva actividad -->
+        <div class = "contenedor_contenido_actividades">
+            <div class="formulario_add_actividad">
+                <form id="formulario_add" action="add_actividad.php" method="post" style="display:none;" enctype="multipart/form-data">
+                    <h2>Añadir actividad</h2>
+                    <label>Nombre</label><br>
+                    <input type="textfield" name="nombre" required ><br>
+                    <label>Precio</label><br>
+                    <input type="textfield" name="precio" required><br>
+                    <label>Fecha</label><br>
+                    <input type="textfield" name="fecha"  required><br>
+                    <label>Descripción</label><br>
+                    <textarea type="textarea" name="descripcion"  >{{ actividad.descripcion}}</textarea><br>
+                    
+                    <h3>Añadir imagen: <input type="file" name="imagen" id="imagen" required><br></h3>
+                    <h3>Añadir hastag: <input type="textfield" name="hashtags" id="hashtags" required><br></h3>
+
+                    <input type="submit" value="Añade">
+                </form>
+            </div>
+            
+            <!-- Formulario de busqueda -->
+            <div class="formulario_busqueda">
+                <form action="../controllers/busqueda.php" method="post">
+                    <input type="textfield" name="busqueda" placeholder="Buscar actividad #">
+                    <input type="submit" value="Buscar">
+                </form>
+            </div>
+
+            <!-- Todas las actividades de la web -->
+            <div id= "contenedor_actividades">
+                {% for actividad in actividades %}
+                    <div class="contenedor_actividad">
+                        <h3>{{actividad.nombre}}</h3>
+                        <p>{{actividad.precio}}</p>
+                        <p>{{actividad.fecha}}</p>
+                        <p>{{actividad.descripcion|raw}}</p>
+                        {% for hastag in actividad.hashtags %}
+                            <h4>{{hastag}}</h4>
+                        {% endfor %}
+                        {% for imagenes in actividad.imagenes %}
+                            <img src="../{{imagenes}}" alt="imagen">
+                            <p>{{imagenes}}</p>
+                        {% endfor %}
+                        <!-- Botones de editar o borrar -->
+                        <div  class="iconos">
+                            <button onclick="FormularioEditar({{actividad.id}})"><img src="../images/editar.png" alt="editar"></button>
+                            <a href="../controllers/elimina_actividad.php?id={{actividad.id}}"><img  src="../images/borrar.png" alt="borrar"></a>
+                        </div>
+                        
+                        <!-- Formulario de editar -->
+                        <div class="formulario_actividades">
+                            <form id="formulario_editar{{actividad.id}}" action="../controllers/edita_actividad.php" method="post" style="display:none" enctype="multipart/form-data">
+                                <input type="textfield" name="nombre" value="{{actividad.nombre}}"><br>
+                                <input type="textfield" name="precio" value="{{actividad.precio}}"><br>
+                                <input type="textfield" name="fecha" value="{{actividad.fecha}}"><br>
+                                <textarea type="textarea" name="descripcion"  >{{ actividad.descripcion}}</textarea><br>
+                                {% for hastag in actividad.hashtags %}
+                                    <input type="textfield" name="hashtags" value="{{hastag}}"><br>
+                                {% endfor %}
+                                {% for imagenes in actividad.imagenes %}
+                                    <input type="textfield" name="imagenes" value="{{imagenes}}"><br>
+                                {% endfor %}
+                                
+                                
+                                <input type="hidden" name="id" value="{{actividad.id}}"> 
+                                
+                                <h3>Añadir imagen: <input type="file" name="imagen" id="imagen"><br></h3>
+                                <h3>Añadir hastag: <input type="textfield" name="hastagnuevo" id="hastagnuevo"><br></h3>
+                                
+                                <input type="submit" value="Editar">
+                            </form>
+                        </div>
+
+                    </div>
+                {% endfor %} 
+            </div>
+        </div>
+    {% endblock %}

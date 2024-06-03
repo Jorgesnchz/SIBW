@@ -1,0 +1,420 @@
+body{
+    margin: 0px;
+    /*En vez de usar el width 100% pongo un numero de pixeles determinado 
+    evitando que a veces se vea mal la pagina*/
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto; 
+    /*Imagen para el background*/
+    background-image: linear-gradient(rgba(43, 92, 63, 0.5), rgba(170, 190, 185, 1)), url('../images/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/*Cabecera*/
+    
+/*Contenedor de toda la cabecera*/
+.contenedor_cabecera_entera{
+    background-color: #aabeb9;
+    height:15%;
+    display: flex; 
+    padding: 20px;
+}
+
+/*Logo de la pagina con sus ajustes*/
+.logo {
+    width: 20%;
+    height: 100%;
+    margin: auto;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.logo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*Contenedor con los menus y cabecera*/
+.contenedor_cabecera_titulo_menu{
+    width: 80%;
+    display: block;
+}
+
+/*Usado para asignar el tamanio y posicion del titulo*/
+.contenedor_titulo{
+    height: 55%;   
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.titulocab{
+    width: 100%;
+    height: auto;
+}
+
+.contenedor_login{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+.contenedor_login img{
+    width: 50px;
+    height: 50px;
+}
+
+.contenedor_login button{
+    border: none;
+    background-color: transparent; 
+}
+
+.titulo{
+    /*Posicion*/
+    margin: 0px;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 80%;
+    /*Tipo de letra*/
+    font-family: "Poppins", sans-serif;
+}
+
+/*Usado para asignar el tamanio y posicion de los menu*/
+.contenedor_menu{
+    height: 45%;
+    position: relative;
+}
+
+/*Ajustes del menu*/
+.menu ul, .menu li {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu{ 
+    /*Ajustes de posicion*/
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 20px;    
+}
+
+.menu ul {
+    list-style: none;
+    width: 100%;
+}
+
+.menu li {
+    float: left;
+    position: relative;
+    width:auto;
+}
+
+/*Ajustes de los enlaces del menu*/
+.menu a{
+    background: #2b5c3f;
+    /*Ajustes de estilo*/
+    color: #c9e0d2;
+    text-decoration: none;
+    font: bold 12px sans-serif;
+    /*Ajustes de posicion*/
+    text-align: center;
+    padding: 10px 25px;
+    display: block;
+}
+
+#perfil{
+    margin-left: 50px;
+}
+/*Ajustes de cuando se pasa el raton por encima en el menu*/
+.menu li:hover a{
+    background: #133e09;
+}
+
+/*Ajustes del menu desplegable*/
+/*El menu desplegable es id por eso usa #*/
+#desplegable {
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    top: 35px;
+    /*Sin seleccionar no es visible*/
+    visibility: hidden;
+    /*Solapa a otros elementos*/
+    z-index: 1;
+}
+
+li:hover ul#desplegable {
+    /*Al pasar el raton por encima es visible*/
+    opacity: 1;
+    top: 34px;
+    visibility: visible;
+}
+
+#desplegable li {
+    width: 100%;
+}
+/*Cambia el color al pasar el raton por encima*/
+#desplegable a:hover {
+    background: #0f2b09;
+}
+
+#desplegable a{
+    background-color:#133e09;
+}
+
+/*Contenido*/
+.contenido{
+    display: flex; 
+    min-height: 80%;
+}
+
+
+#formulario_login{
+    /*Ajustes de posicion*/	
+    z-index: 5;
+    
+    position: absolute;
+    top: 50%;
+    left: 45%;
+
+
+    /*Ajustes de estilo*/
+    background-color: #7f9d8a;
+    border-radius: 1rem;
+    height: 500px;
+    width: 600px;
+}
+
+#login{
+    margin: 10px;
+    width: 45%;
+    height: 90%;
+
+    background-color: #aabeb9;
+    border-radius: 1rem;
+}
+
+#login form{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+#login form input{
+    width: 80%;
+    height: 30px;
+    border-radius: 1rem;
+    border: none;
+    padding: 5px;
+    margin-top: 60px;
+}
+
+#registro{
+    margin: 20px;
+    width: 45%;
+    height: 90%;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+
+    background-color: #aabeb9;
+    border-radius: 1rem;
+}
+
+#registro form{
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+#registro form input{
+    width: 80%;
+    height: 30px;
+    border-radius: 1rem;
+    border: none;
+}
+
+/*Panel lateral con enlaces externos*/
+.panel_lateral{
+    background-color: #2b5c3f;
+    /*Anchura del panel lateral*/
+    width: 20%;
+    /*Estilo del panel*/
+    padding: 0px 20px;
+    text-align: center;
+    font: bold 12px/20px sans-serif;
+    overflow: auto;
+}
+
+
+.panel_lateral ul, li{
+    padding: 0px;
+    margin: 0px;
+}
+
+/*Ajustes del estilo del panel lateral*/
+.panel_lateral ul{
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/*Ajustes para los enlaces*/
+.panel_lateral a{
+    text-decoration: none;
+    color: #c9e0d2;
+}
+
+.panel_lateral h3{
+    font-family: "Poppins", sans-serif;
+}
+
+/*Contenedor del grid de las actividades*/
+.contenedor_actividades{
+    background-color: #c9e0d2;
+    /*Anchura del grid de actividades*/
+    width: 80%;
+    padding: 20px;
+}
+
+/*En el caso de que la pantalla sea muy pequeña no 
+aparece el panel lateral y el grid ocupa su sitio*/
+@media only screen and (max-width: 800px) {
+    .panel_lateral {
+        display: none;
+    }
+    .contenedor_actividades{
+        width: 100%;
+    }
+}
+
+/*Grid de actividades*/
+.grid_actividades{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    /*Grid de 3 columnas y deja separación entre actividades*/
+    grid-template-columns:  1fr 1fr 1fr;
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+/*En el caso de que sea demasiado pequenia la 
+pantalla muestra las actividades de dos en dos*/
+@media only screen and (max-width: 600px) {
+    .grid_actividades{
+        grid-template-columns:  1fr 1fr;
+    }
+}
+
+/*Actividades dentro del grid*/
+.actividad{
+    /*Usada para que cuando el tamanio es demasiado 
+    pequenio se adapten las actividades, si se quieren aniadir mas
+    hay que hacer (100/nºfilas)*100 */
+    min-height: 33%;
+    /*Ajustes de estilo*/
+    position: relative;
+    background-color: #729e83;
+    border-radius: 1rem;
+    text-align: center; 
+}
+
+/*Si es demasiado pequenia para dos 
+en dos lo hace de uno en uno y con un scroll 
+para que se puedan ver las actividades*/
+@media only screen and (max-width: 400px) {
+    .grid_actividades{
+        grid-template-columns:  1fr;
+        overflow-y: auto;
+    }
+    .actividad{
+        min-height: 200px;
+    }
+}
+
+/*Transiciones al pasar el raton encima*/
+.actividad:hover{
+    background-color: #2b5c3f;
+    transition: background-color 0.5s ease;
+}
+
+/*Transicion del enlace inferior*/
+.actividad:hover > .enlace_inferior{
+    color:white;
+    transition: color  0.5s ease;
+}
+
+/*Ajustes de estilo de las imagenes del grid*/
+.actividad img{
+    width: 90%;
+    height: 80%;
+    object-fit: cover;
+    padding-top: 10px;
+    border-radius: 1rem;
+}
+
+/*El enlace ocupa todo el grid*/
+.enlace_total {
+    display: block;
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+}
+
+/*Enlace de la parte inferior*/
+.enlace_inferior{
+    /*Posicion*/
+    height: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    /*Valores de estilo*/
+    text-decoration: none;
+    color: black;   
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+/*Pie de pagina*/
+.pie_pagina{
+    display: flex; 
+    height: 5%;
+    background-color: #aabeb9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Logo copyright tamanio*/
+.pie_pagina img{
+    height: 20px;
+    margin: 5px;
+}
+
+/*Filtro para cuando se selecciona el panel de valoraciones*/
+.blur {
+    filter: blur(5px);
+}
