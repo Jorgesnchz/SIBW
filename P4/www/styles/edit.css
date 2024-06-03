@@ -185,8 +185,7 @@ li:hover ul#desplegable {
     /*Ajustes de posicion*/	
     z-index: 5;
     position: absolute;
-    top: 50%;
-    left: 40%;
+    margin: 300px;
 
 
     /*Ajustes de estilo*/
@@ -195,6 +194,7 @@ li:hover ul#desplegable {
     height: 500px;
     width: 600px;
 }
+
 
 /* Formulario de login */
 #login{
