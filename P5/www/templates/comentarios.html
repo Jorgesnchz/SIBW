@@ -15,7 +15,16 @@
             <!-- Todas los comentarios de la web -->
             <div class= "contenedor_comentarios">
                 {% for comentario in comentarios %}
-                    <div class="contenedor_comentario">
+                    {% for actividad in listaActividades %}
+                        {% if actividad.id == comentario.actividad_id %}
+                            {% if actividad.publicada %}
+                            <div class="contenedor_comentario">
+                            {% else %}
+                            <div class="contenedor_comentario_no_publicada">
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    
                         <h3>{{comentario.nombre}}</h3>
                         {% for actividad in listaActividades %}
                             {% if actividad.id == comentario.actividad_id %}
@@ -33,7 +42,17 @@
                             <form id="formulario_editar{{comentario.id}}" action="../controllers/edita_comentario.php" method="post" style="display: none;">
                                 <textarea type="textarea" name="comentario">{{comentario.comentario}}</textarea><br>
                                 <input type="textfield" name="nombre" value="{{comentario.nombre}}"><br>
-                                <input type="submit" value="Editar">
+                                
+                                {% for actividad in listaActividades %}
+                                    {% if actividad.id == comentario.actividad_id %}
+                                        {% if actividad.publicada %}
+                                        <input type="submit" value="Editar">
+                                        {% else %}
+                                        <input type="submit" value="Editar" class="editar_no_publicada">
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                
                                 <input type="hidden" name="id" value="{{comentario.id}}">
                             </form>
                         </div>

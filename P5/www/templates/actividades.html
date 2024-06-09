@@ -20,7 +20,7 @@
                 <li><a>Actividades</a>
                 <!--Menu desplegable-->
                 <ul id="desplegable">
-                    {% for actividad in actividades %} 
+                    {% for actividad in listaActividades %} 
                         <li><a href="actividad.php?id={{ actividad.id }}">{{ actividad.nombre }}</a></li>
                     {% endfor %}
                 </ul>
@@ -31,10 +31,10 @@
                     <li><a href=perfil.php id="perfil">{{usuario}}</a></li>
                 {% endif %}
 
-                {% if tipo > 0 %}
+                {% if tipo > 1 %}
                     <li><a href="comentarios.php">Comentarios</a></li>
                 {% endif %}
-                {% if tipo > 1 %}
+                {% if tipo > 2 %}
                     <li><a href="actividades.php">Actividades</a></li>
                 {% endif %}
                 {% if tipo == 3%}
@@ -51,7 +51,7 @@
         <!-- Formulario para añadir una nueva actividad -->
         <div class = "contenedor_contenido_actividades">
             <div class="formulario_add_actividad">
-                <form id="formulario_add" action="add_actividad.php" method="post" style="display:none;" enctype="multipart/form-data">
+                <form id="formulario_add" action="../controllers/add_actividad.php" method="post" style="display:none;" enctype="multipart/form-data">
                     <h2>Añadir actividad</h2>
                     <label>Nombre</label><br>
                     <input type="textfield" name="nombre" required ><br>
@@ -64,6 +64,8 @@
                     
                     <h3>Añadir imagen: <input type="file" name="imagen" id="imagen" required><br></h3>
                     <h3>Añadir hastag: <input type="textfield" name="hashtags" id="hashtags" required><br></h3>
+
+                    <h3>Publicada: <input type="checkbox" name="actpublicada" value="1"><br></h3>
 
                     <input type="submit" value="Añade">
                 </form>
@@ -80,8 +82,17 @@
             <!-- Todas las actividades de la web -->
             <div id= "contenedor_actividades">
                 {% for actividad in actividades %}
-                    <div class="contenedor_actividad">
+                    {% if actividad.publicada %}
+                        <div class="contenedor_actividad">
+                    {% else %}
+                        <div class="contenedor_actividad_no_publicada">
+                    {% endif %}
                         <h3>{{actividad.nombre}}</h3>
+                        {% if actividad.publicada %}
+                            <h3>Publicada</h3>
+                        {% else %}
+                            <h3>No publicada</h3>
+                        {% endif %}
                         <p>{{actividad.precio}}</p>
                         <p>{{actividad.fecha}}</p>
                         <p>{{actividad.descripcion|raw}}</p>
@@ -118,7 +129,19 @@
                                 <h3>Añadir imagen: <input type="file" name="imagen" id="imagen"><br></h3>
                                 <h3>Añadir hastag: <input type="textfield" name="hastagnuevo" id="hastagnuevo"><br></h3>
                                 
-                                <input type="submit" value="Editar">
+                                <h3>Publicada: <input type="checkbox" name="actpublicada" 
+                                    {% if actividad.publicada %}
+                                        value="1"
+                                        checked
+                                    {% else %}
+                                        value="0"
+                                    {% endif %}><br></h3>
+                                {% if actividad.publicada %}
+                                    <input type="submit" value="Editar" class="sumbit_publicada">
+                                {% else %}
+                                    <input type="submit" value="Editar" class="sumbit_no_publicada">
+                                {% endif %}
+                                
                             </form>
                         </div>
 

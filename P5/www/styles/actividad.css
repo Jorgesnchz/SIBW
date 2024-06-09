@@ -12,8 +12,6 @@ body{
     background-attachment: fixed;
 }
 
-/*Cabecera*/
-    
 /*Contenedor de toda la cabecera*/
 .contenedor_cabecera_entera{
     background-color: #aabeb9;
@@ -40,12 +38,11 @@ body{
 /*Contenedor con los menus y cabecera*/
 .contenedor_cabecera_titulo_menu{
     width: 80%;
-    display: block;
 }
 
 /*Usado para asignar el tamanio y posicion del titulo*/
 .contenedor_titulo{
-    height: 55%;   
+    height: 55%;
     position: relative;
 }
 
@@ -60,6 +57,7 @@ body{
 .contenedor_login img{
     width: 50px;
     height: 50px;
+    padding-left: 20px;
 }
 
 .contenedor_login button{
@@ -69,8 +67,9 @@ body{
 }
 
 .contenedor_login a{
-    padding-left: 20px;
+    padding-left: 0px;
 }
+
 
 .titulo{
     /*Posicion*/
@@ -78,7 +77,6 @@ body{
     position: absolute;
     bottom: 0;
     left: 20px;
-    width: 80%;
     /*Tipo de letra*/
     font-family: "Poppins", sans-serif;
 }
@@ -115,7 +113,7 @@ body{
 }
 
 /*Ajustes de los enlaces del menu*/
-.menu a, #nueva{
+.menu a{
     background: #2b5c3f;
     /*Ajustes de estilo*/
     color: #c9e0d2;
@@ -127,23 +125,31 @@ body{
     display: block;
 }
 
-#nueva{
-    margin: 0px;
-
-
-    border: none;
-
+#perfil {
+    margin-left: 20px;
 }
-#perfil{
-    margin-left: 50px;
+
+/*Ajustes de los botones del menu*/
+.menu button{
+    background: #2b5c3f;
+    /*Ajustes de estilo*/
+    color: #c9e0d2;
+    text-decoration: none;
+    font: bold 12px sans-serif;
+    cursor: pointer;
+    /*Ajustes de posicion*/
+    text-align: center;
+    padding: 10px 25px;
+    display: block;
+    border: 0px;
 }
+
 /*Ajustes de cuando se pasa el raton por encima en el menu*/
-.menu li:hover a, #nueva:hover{
+.menu li:hover a{
     background: #133e09;
 }
 
 /*Ajustes del menu desplegable*/
-/*El menu desplegable es id por eso usa #*/
 #desplegable {
     opacity: 0;
     position: absolute;
@@ -152,7 +158,7 @@ body{
     /*Sin seleccionar no es visible*/
     visibility: hidden;
     /*Solapa a otros elementos*/
-    z-index: 1;
+    z-index: 2;
 }
 
 li:hover ul#desplegable {
@@ -177,15 +183,15 @@ li:hover ul#desplegable {
 /*Contenido*/
 .contenido{
     display: flex; 
-    min-height: 80%;
+    min-height: 930px;
 }
-
 
 #formulario_login{
     /*Ajustes de posicion*/	
     z-index: 5;
     position: absolute;
-    margin: 100px 300px 100px 300px;
+    top: 30%;
+    left: 40%;
 
 
     /*Ajustes de estilo*/
@@ -195,7 +201,6 @@ li:hover ul#desplegable {
     width: 600px;
 }
 
-/* Formulario de login */
 #login{
     margin: 10px;
     width: 45%;
@@ -225,7 +230,6 @@ li:hover ul#desplegable {
     margin-top: 60px;
 }
 
-/* Formulario de registro */
 #registro{
     margin: 20px;
     width: 45%;
@@ -268,7 +272,6 @@ li:hover ul#desplegable {
     overflow: auto;
 }
 
-
 .panel_lateral ul, li{
     padding: 0px;
     margin: 0px;
@@ -293,286 +296,217 @@ li:hover ul#desplegable {
     font-family: "Poppins", sans-serif;
 }
 
-/*Contenedor del grid de las actividades*/
-.contenedor_contenido{
+/*Informacion actividad*/
+.contenedor_informacion{
     background-color: #c9e0d2;
-    /*Anchura del grid de actividades*/
     width: 80%;
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
+    padding: 0px 0px 0px 20px;
+    /*Uso grid para facilitar que la pagina 
+    sea mas responsive*/
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    position: relative; /* Agregar posición relativa */
 }
 
-.contenedor_contenido_actividades{
-    background-color: #c9e0d2;
-    /*Anchura del grid de actividades*/
-    width: 80%;
-    padding: 20px;
+/*Panel de valoraciones*/
+#panel_valoraciones{
+    /*Ajustes de posicion*/	
+    z-index: 1;
+    grid-row: 1/5;
+    grid-column: 5/7;
+    /*Ajustes de estilo*/
+    background-color: #7f9d8a;
+    border-radius: 0.5rem 0 0 0.5rem;
+    /*Añade un scroll por si se pasa del espacio*/
+    max-height: 930px;
+    overflow: auto;
 }
 
 /*En el caso de que la pantalla sea muy pequeña no 
-aparece el panel lateral y el grid ocupa su sitio*/
+aparece el panel lateral y el grid ocupa su sitio
+ademas de adaptarl tamaño del panel de valoraciones*/
 @media only screen and (max-width: 800px) {
     .panel_lateral {
         display: none;
     }
-    .contenedor_contenido, .contenedor_contenido_actividades{
+    .contenedor_informacion{
         width: 100%;
     }
+    #panel_valoraciones{
+        max-height: 850px;
+    }
 }
-
-/*Contenedor del contenido, distintos tipos*/
-.contenedor_editar_perfil, .contenedor_datos_perfil{
-    width: 45%;
-    padding: 20px;
-}
-
-.contenedor_editar_perfil form, .contenedor_comentarios{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
+#panel_valoraciones h3 {
     font-family: "Poppins", sans-serif;
-}
-
-.contenedor_editar_perfil h1, .contenedor_editar_perfil h3,
-.contenedor_usuario h3, .contenedor_actividad h3{
-    margin: 0px;
-    font-family: "Poppins", sans-serif;
-}
-
-.contenedor_editar_perfil form input{
-    width: 80%;
-    height: 30px;
-    border-radius: 1rem;
-    border: none;
-}
-
-.contenedor_editar_perfil form input[type="submit"], input[type="reset"] {
-    background-color: #a9c5b3;
-    font-family: "Poppins", sans-serif;
-}
-
-.contenedor_editar_perfil form input[type="submit"]:hover, input[type="reset"]:hover {
-    background-color: #7f9d8a;
-}
-
-.contenedor_comentario, .contenedor_usuario{
-    background-color: #7f9d8a;
-    border-radius: 1rem;
-    padding: 20px;
     margin: 10px;
-    font-family: "Poppins", sans-serif;
-    
-}
-.contenedor_usuario{
-    min-width: 400px;
+    text-align: center;
 }
 
-.contenedor_comentario{
-    width: 90%;
-}
-
-.contenedor_comentario img, .contenedor_usuario img{
-    width: 40px;
-    height: 40px;
-}
-
-.contenedor_comentario button, .contenedor_actividad button,.contenedor_usuario button {
-    border: none;
-    background-color: transparent;
-}
-
-.contenedor_usuarios{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    overflow: auto;
-}
-
-.contenedor_usuario form{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-
-}
-
-#contenedor_actividades{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.contenedor_actividad{
-    background-color: #7f9d8a;
+/*Estilo de las valoraciones*/
+.valoracion{
+    background-color: #749287;
     border-radius: 1rem;
-    padding: 20px;
     margin: 10px;
-    font-family: "Poppins", sans-serif;
 }
 
-
-.contenedor_actividad img{
-    width: 200px;
-    height: 200px;
+.valoracion h5, p{
+    font-family: "Montserrat", sans-serif;
+    margin: 5px;
+    color : #262c28;
 }
 
-.iconos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.iconos img{
-    width: 40px;
-    height: 40px;
-}
-
-
-/*Formulario de edicion, distitos tipos*/
-.formulario, .formulario_actividades, .formulario_add_actividad {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-
-    font-family: "Poppins", sans-serif;
-    z-index: 5;
-}
-
-.formulario input[type="submit"]{
-    margin: 20px 0px 0px 0px;
-}
-
-.formulario input[type="submit"], .formulario_actividades input[type="submit"], .formulario_add_actividad input[type="submit"]{
-    width: 100%;
-    height: 30px;
-    border: none;
-
-    background-color: #a9c5b3;
+/*Formulario de valoracion*/
+#formulario_valoracion{
+    /*Ajustes de posicion*/
+    border: 20px;
+    padding-left: 10px;
+    z-index: 1;
+    grid-column: 1/4;
+    grid-row: 2/3;
+    /*Ajustes de estilo*/
+    background-color: #789682;
     border-radius: 1rem;
-    font: bold 20px / 20px sans-serif;
-    
 }
 
-.formulario input[type="submit"]:hover, .formulario_actividades input[type="submit"]:hover, 
-.formulario_add_actividad input[type="submit"]:hover, .formulario_busqueda input[type="submit"]:hover {
+#formulario_valoracion form{
+    margin: 0px;  
+    height: 55%;
+}
+
+#formulario_valoracion label, h3, input[type="submit"]{
+    font-family: "Poppins", sans-serif;   
+}
+
+#formulario_valoracion h3{
+    border: 5px;
+}
+
+#formulario_valoracion p{
+    text-decoration: none;
+    color: #c9e0d2;
+    font-family: "Poppins", sans-serif;
+    font-size: 35px;
+}
+
+/*Ajustes de los campos del formulario*/
+#nombre, #email, #comentario{
+    border: 10px;
+    border-radius: 0.5rem;
+    background-color: #c9e0d2;
+}
+
+#comentario{
+    display: block;
+    margin: auto;
+    width: 95%;
+    /*Evita que se pueda redimensionar el cuadro de texto del comentario*/
+    resize: none;
+}
+
+/*Boton de enviar*/
+#formulario_valoracion input[type="submit"]{
+    /*Ajustes de estilo*/
+    border-radius: 1rem;
     background-color: #2b5c3f;
-    color : white;
+    color: #c9e0d2;
+    cursor: pointer;
+    /*Ajustes de posicion*/
+    display: block;
+    margin: auto;
+    height: 20%;
+    margin-top: 10px;
 }
 
-.formulario input[type="textfield"]{
-    width: 100%;
-    margin: 20px 0px 0px 0px;
-    height: 30px;
-    border: none;
-
+/*Dialogo modal*/
+#dialogo_modal{
+    /*Ajustes de posicion*/
+    z-index: 3;
+    grid-column: 1/4;
+    grid-row: 2;
+    padding: 20px;
+    /*Ajustes de estilo*/
+    background-color: #0f2b09;
+    color : #c9e0d2;
+    border-radius: 1rem;
     text-align: center;
-    border-radius: 1rem;
-}
-
-
-.formulario textarea{
-    width: 400px;
-    height: 200px;
-    
-    padding: 8px;
-
-    border: none;
-    resize: none;
-    
-    border-radius: 1rem;
-    word-wrap: break-word;
-
-}
-
-.formulario_actividades input[type="textfield"], .formulario_add_actividad input[type="textfield"]{
-    width: 100%;
-    margin: 10px 0px 10px 0px;
+    margin: auto;
     height: 30px;
-    border: none;
-
-    text-align: center;
-    border-radius: 1rem;
 }
 
-.formulario_actividades textarea, .formulario_add_actividad textarea{ 
-    width: 800px;
-    height: 500px;
-
-    padding: 8px;
-    margin: 10px 0px 10px 0px;
-    border: none;
-    resize: none;
-    
-    border-radius: 1rem;
-    word-wrap: break-word;
-}
-
-.formulario_actividades input[type="file"], .formulario_add_actividad input[type="file"]{
-    margin: 10px;
-    height: 30px;
-    border: none;
-
-    text-align: center;
-    background-color: #a9c5b3;
-    border: none;
-    background-color: transparent;
-}
-
-.formulario_add_actividad{
-    position: absolute;
-    top: 25%;
-
-    width: 600px;
-    background-color: #54705e;
-    border-radius: 1rem;
-}
-
-
-.formulario_add_actividad textarea{
-    width: 500px;
-    height: 500px;
-    margin: 0px;
-    padding: 8px;
-
-    border: none;
-    resize: none;
-    
-    border-radius: 1rem;
-    word-wrap: break-word;
-}
-
-.formulario_busqueda{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
+/*Ajustes de estilo para los titulos*/
+.cabecera_actividad{    
+    /*La cabecera ocupa una fila completa*/
+    grid-row: 1;
+    grid-column: 1/7;
     font-family: "Poppins", sans-serif;
-    justify-content: right;
+    margin: 0px;
+    padding: 20px 20px 20px 0px;
 }
 
-.formulario_busqueda input[type="textfield"]{
-    height: 30px;
-    border-radius: 1rem;
-    border: none;
-    padding: 10px;
+/*Informacion de la actividad con fotos*/
+.contenedor_fotos_texto{
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    /*Ocupa desde la fila 2 hasta la 8*/
+    grid-row: 2/4;
+    grid-column: 1/7;
+    /*En caso de que el tamanio sea demasiado 
+    pequenio se adapta aniadiendo un scroll*/
+    padding: 20px 20px 20px 0px;
 }
 
-.formulario_busqueda input[type="submit"]{
-    height: 30px;
+/*La foto de arriba es un cuadrado 
+que esta sobre un contenedor*/
+#foto_arriba{
+    background-color: #729e83;
+    /*Ajustes de tamanio*/
+    width: 220px;
+    height: 220px;
+    /*Ajustes de posiciom*/
+    float: right;
     border-radius: 1rem;
-    border: none;
-    background-color: #a9c5b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+}
+
+
+#foto_arriba img { 
+    height: 90%;
+    width: 90%;
+    padding: auto;
+    /*Las imagenes se ven redondeadas*/
+    border-radius: 1rem;
+}
+
+/*Ajustes para los botones*/
+.botones{
+    /*Ajustes para el centrado*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Los botones ocupan la ultima fila del grid*/
+    grid-row: 4;
+    grid-column: 1/7;
+    padding: 20px 20px 20px 0px;
+}
+
+.botones a{
+    text-decoration: none;
+}
+
+/*Ajustes de estilo de las imagenes*/
+.botones img{
+    height: 40px;
+    width: auto;
+    padding: 20px;
 }
 
 /*Pie de pagina*/
 .pie_pagina{
+    display: flex; 
     height: 5%;
     background-color: #aabeb9;
     display: flex;
@@ -586,7 +520,7 @@ aparece el panel lateral y el grid ocupa su sitio*/
     margin: 5px;
 }
 
-/*Filtro para cuando se selecciona el panel*/
+/*Filtro para cuando se selecciona el panel de valoraciones*/
 .blur {
     filter: blur(5px);
 }

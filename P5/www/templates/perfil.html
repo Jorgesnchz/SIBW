@@ -1,0 +1,39 @@
+{%extends 'padre.html'%}
+
+    {% block css %}
+        <!-- Estilos css -->
+        <link rel="stylesheet" href="../styles/edit.css">
+    {% endblock %}
+
+    {% block contenido %}
+        <div class = "contenedor_contenido">
+            <!-- Formulario para editar el perfil -->
+            <div class="contenedor_editar_perfil">
+                <h1>Editar Perfil</h1>
+
+                <form action="../controllers/editar_perfil.php" method="POST"  enctype="multipart/form-data">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" value="{{nombre}}"><br>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" value="{{correo}}"><br>
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" name="usuario" value="{{usuario}}"><br>
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" name="contrasena"><br>
+                    <label for="contrasena">Confirma la contraseña:</label>
+                    <input type="password" name="contrasena2"><br>
+                    <input type="submit" value="Guardar">
+                    <input type="reset" value="Cancelar">
+                </form>
+            </div>
+            <!-- Datos del perfil -->
+            <div class="contenedor_datos_perfil">
+                <div class="contenedor_datos_perfil_titulo">
+                    <h1>Datos de Perfil</h1>
+                    <p>Nombre: {{nombre}}</p>
+                    <p>Email: {{correo}}</p>
+                    <p>Usuario: {{usuario}}</p>
+            </div>
+        </div>
+    {% endblock %}
+

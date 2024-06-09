@@ -308,6 +308,9 @@ aparece el panel lateral y el grid ocupa su sitio*/
     .contenedor_actividades{
         width: 100%;
     }
+    .actividad, .actividad_inactiva{
+        height: 400px;
+    }
 }
 
 /*Grid de actividades*/
@@ -327,6 +330,10 @@ pantalla muestra las actividades de dos en dos*/
     .grid_actividades{
         grid-template-columns:  1fr 1fr;
     }
+
+    .actividad, .actividad_inactiva{
+        height: 400px;
+    }
 }
 
 /*Actividades dentro del grid*/
@@ -334,7 +341,7 @@ pantalla muestra las actividades de dos en dos*/
     /*Usada para que cuando el tamanio es demasiado 
     pequenio se adapten las actividades, si se quieren aniadir mas
     hay que hacer (100/nºfilas)*100 */
-    min-height: 33%;
+    min-height: 300px;
     /*Ajustes de estilo*/
     position: relative;
     background-color: #729e83;
@@ -346,12 +353,15 @@ pantalla muestra las actividades de dos en dos*/
 en dos lo hace de uno en uno y con un scroll 
 para que se puedan ver las actividades*/
 @media only screen and (max-width: 400px) {
-    .grid_actividades{
-        grid-template-columns:  1fr;
+    .contenedor_actividades{
         overflow-y: auto;
     }
+
+    .grid_actividades{
+        grid-template-columns:  1fr;
+    }
     .actividad{
-        min-height: 200px;
+        height: 500px;
     }
 }
 

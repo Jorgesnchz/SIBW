@@ -1,0 +1,54 @@
+
+{% extends 'padre.html' %}
+    
+    {% block css %}
+        <link rel="stylesheet" href="../styles/portada.css">
+    {% endblock %}
+
+    {% block titulo %}
+        Washington National Parks
+    {% endblock %}
+    
+    {% block script %}
+        {{ parent() }}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="../scripts/ajax.js"></script>
+    {% endblock %}
+    {% block contenido %}
+        <div class="contenedor_actividades"> 
+            
+            <div class="contenedor_busqueda">
+                <div class="formulario_busqueda">
+                    <form action="../index.php" method="post">
+                        <input type="textfield" name="busqueda" placeholder="Buscar actividad"  onkeyup=PalabraAjax(value)>
+                        <ul id="listaBusqueda" style="display: none;">
+                        </ul>
+                        <input type="submit" value="Buscar">
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="grid_actividades">
+                
+                <!--Actividades del grid-->
+                {% for actividadLista in listaActividades %}
+                    {% if actividadLista.publicada == 0 %}
+                    <div class="actividad_inactiva">
+                    {% else %}
+                    <div class="actividad">
+                    {% endif %}
+                    
+                        <a class="enlace_total", href="{{ actividadLista.enlace }}"></a>
+                        <img src="../{{ actividadLista.imagen }}">
+                        <!-- El texto inferior es enlace para que no se puedan seleccionar las lineas -->
+                        <a class="enlace_inferior"href="{{ actividadLista.enlace}}"> {{ actividadLista.nombre }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div> 
+        {% if error %}
+        <script>
+            alert("{{ error }}");
+        </script>
+        {% endif %}
+    {% endblock %}

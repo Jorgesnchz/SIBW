@@ -22,9 +22,8 @@
             $actividades = getActividadesByHashtag($hashtag, $mysqli);
             $listaActividades = getListaActividades($mysqli, $tipo);
             $mysqli->close();
-    
-            $usuario = $_SESSION['usuario'];
             
+            $usuario = $_SESSION['usuario'];
             
             echo $twig->render('actividades.html', ['actividades' => $actividades, 'usuario' => $usuario, 'tipo' => $tipo, 'listaActividades' => $listaActividades]);
         }

@@ -1,0 +1,49 @@
+{%extends 'padre.html'%}
+
+    {% block script %}
+        <!-- Funciones js -->
+        {{ parent() }}
+        <script src="../scripts/usuarios.js"></script>
+    {% endblock %}
+    {% block css %}
+        <!-- Estilos css --> 
+        <link rel="stylesheet" href="../styles/edit.css">
+    {% endblock %}
+
+    {% block contenido %}
+        <div class = "contenedor_contenido">
+            <div class= "contenedor_usuarios">
+                <!-- Usuarios -->
+                {% for usuario_act in usuarios %}
+                    <div class="contenedor_usuario">
+                        <h3>{{usuario_act.usuario}}</h3>
+                        <p>{{usuario_act.correo}}</p>
+                        <p>{{usuario_act.nombre}}</p>
+                        <p>{{usuario_act.tipo}}</p>
+
+                        <!-- Botones editar o eliminar-->
+                        <a href="../controllers/elimina_usuario.php?id={{usuario_act.id}}"><img src="../images/borrar.png" alt="borrar"></a>
+                        <button onclick="FormularioEditarUsuario({{usuario_act.id}})"><img src="../images/editar.png" alt="editar"></button>
+                        
+                        <!-- Formulario editar usuario -->
+                        <div class="formulario">
+                            <form id="formulario_editar_usuario{{usuario_act.id}}" action="../controllers/editar_usuario.php" method="post" style="display:none" >
+                                <label>Nombre:</label>
+                                <input type="textfield" name="nombre" value="{{usuario_act.nombre}}"><br>
+                                <label>Correo:</label>
+                                <input type="textfield" name="correo" value="{{usuario_act.correo}}"><br>
+                                <label>Tipo:</label>
+                                <input type="textfield" name="tipo" value="{{usuario_act.tipo}}"><br>    
+                                <label>Usuario:</label>
+                                <input type="textfield" name="usuario" value="{{usuario_act.usuario}}"><br>
+                                <input type="submit" value="Editar">
+
+                                <input type="hidden" name="id" value="{{usuario_act.id}}">
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %} 
+            </div>
+        </div>
+    {% endblock %}
+

@@ -46,15 +46,25 @@ body{
 /*Usado para asignar el tamanio y posicion del titulo*/
 .contenedor_titulo{
     height: 55%;   
+    width: 100%;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.titulocab{
+    width: 100%;
+    height: auto;
 }
 
 .contenedor_login{
     height: 100%;
     width: 20%;
-    position: absolute;
-    top:50%;
-    left: 82%; 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
 }
 
 .contenedor_login img{
@@ -71,7 +81,6 @@ body{
 .contenedor_login a{
     padding-left: 20px;
 }
-
 .titulo{
     /*Posicion*/
     margin: 0px;
@@ -82,6 +91,7 @@ body{
     /*Tipo de letra*/
     font-family: "Poppins", sans-serif;
 }
+
 
 /*Usado para asignar el tamanio y posicion de los menu*/
 .contenedor_menu{
@@ -336,8 +346,9 @@ aparece el panel lateral y el grid ocupa su sitio*/
     font-family: "Poppins", sans-serif;
 }
 
+
 .contenedor_editar_perfil h1, .contenedor_editar_perfil h3,
-.contenedor_usuario h3, .contenedor_actividad h3{
+.contenedor_usuario h3, .contenedor_actividad h3, .contenedor_actividad_no_publicada h3{
     margin: 0px;
     font-family: "Poppins", sans-serif;
 }
@@ -358,6 +369,14 @@ aparece el panel lateral y el grid ocupa su sitio*/
     background-color: #7f9d8a;
 }
 
+.contenedor_comentario_no_publicada{
+    background-color: #aa8964;
+    border-radius: 1rem;
+    padding: 20px;
+    margin: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
 .contenedor_comentario, .contenedor_usuario{
     background-color: #7f9d8a;
     border-radius: 1rem;
@@ -366,20 +385,23 @@ aparece el panel lateral y el grid ocupa su sitio*/
     font-family: "Poppins", sans-serif;
     
 }
+
+
+
 .contenedor_usuario{
     min-width: 400px;
 }
 
-.contenedor_comentario{
+.contenedor_comentario, .contenedor_comentario_no_publicada{
     width: 90%;
 }
 
-.contenedor_comentario img, .contenedor_usuario img{
+.contenedor_comentario img, .contenedor_usuario img, .contenedor_comentario_no_publicada img{
     width: 40px;
     height: 40px;
 }
 
-.contenedor_comentario button, .contenedor_actividad button,.contenedor_usuario button {
+.contenedor_comentario button, .contenedor_actividad button,.contenedor_usuario button, .contenedor_actividad_no_publicada button, .contenedor_comentario_no_publicada button{ 
     border: none;
     background-color: transparent;
 }
@@ -407,7 +429,7 @@ aparece el panel lateral y el grid ocupa su sitio*/
     justify-content: space-evenly;
 }
 
-.contenedor_actividad{
+.contenedor_actividad {
     background-color: #7f9d8a;
     border-radius: 1rem;
     padding: 20px;
@@ -415,8 +437,15 @@ aparece el panel lateral y el grid ocupa su sitio*/
     font-family: "Poppins", sans-serif;
 }
 
+.contenedor_actividad_no_publicada{
+    background-color: #aa8964;
+    border-radius: 1rem;
+    padding: 20px;
+    margin: 10px;
+    font-family: "Poppins", sans-serif;
+}
 
-.contenedor_actividad img{
+.contenedor_actividad img, .contenedor_actividad_no_publicada img{
     width: 200px;
     height: 200px;
 }
@@ -449,7 +478,7 @@ aparece el panel lateral y el grid ocupa su sitio*/
     margin: 20px 0px 0px 0px;
 }
 
-.formulario input[type="submit"], .formulario_actividades input[type="submit"], .formulario_add_actividad input[type="submit"]{
+.formulario input[type="submit"], .sumbit_publicada, .formulario_add_actividad input[type="submit"]{
     width: 100%;
     height: 30px;
     border: none;
@@ -460,11 +489,27 @@ aparece el panel lateral y el grid ocupa su sitio*/
     
 }
 
-.formulario input[type="submit"]:hover, .formulario_actividades input[type="submit"]:hover, 
+.formulario input[type="submit"]:hover, .sumbit_publicada:hover, 
 .formulario_add_actividad input[type="submit"]:hover, .formulario_busqueda input[type="submit"]:hover {
     background-color: #2b5c3f;
     color : white;
 }
+
+.sumbit_no_publicada{
+    width: 100%;
+    height: 30px;
+    border: none;
+
+    border-radius: 1rem;
+    font: bold 20px / 20px sans-serif;
+    background-color: #8a6f51;
+}
+
+.sumbit_no_publicada:hover{
+    background-color: #725a43;
+    color : white;
+}
+
 
 .formulario input[type="textfield"]{
     width: 100%;
@@ -569,6 +614,14 @@ aparece el panel lateral y el grid ocupa su sitio*/
     border-radius: 1rem;
     border: none;
     background-color: #a9c5b3;
+}
+
+.editar_no_publicada{
+    background-color: #8a6f51 !important;
+}
+
+.editar_no_publicada:hover{
+    background-color: #725a43 !important;
 }
 
 /*Pie de pagina*/

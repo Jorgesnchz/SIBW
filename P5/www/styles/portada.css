@@ -46,15 +46,25 @@ body{
 /*Usado para asignar el tamanio y posicion del titulo*/
 .contenedor_titulo{
     height: 55%;   
+    width: 100%;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.titulocab{
+    width: 100%;
+    height: auto;
 }
 
 .contenedor_login{
     height: 100%;
     width: 20%;
-    position: absolute;
-    top:50%;
-    left: 82%; 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
 }
 
 .contenedor_login img{
@@ -71,7 +81,6 @@ body{
 .contenedor_login a{
     padding-left: 20px;
 }
-
 .titulo{
     /*Posicion*/
     margin: 0px;
@@ -115,7 +124,7 @@ body{
 }
 
 /*Ajustes de los enlaces del menu*/
-.menu a, #nueva{
+.menu a{
     background: #2b5c3f;
     /*Ajustes de estilo*/
     color: #c9e0d2;
@@ -127,18 +136,11 @@ body{
     display: block;
 }
 
-#nueva{
-    margin: 0px;
-
-
-    border: none;
-
-}
 #perfil{
     margin-left: 50px;
 }
 /*Ajustes de cuando se pasa el raton por encima en el menu*/
-.menu li:hover a, #nueva:hover{
+.menu li:hover a{
     background: #133e09;
 }
 
@@ -184,8 +186,10 @@ li:hover ul#desplegable {
 #formulario_login{
     /*Ajustes de posicion*/	
     z-index: 5;
+    
     position: absolute;
-    margin: 100px 300px 100px 300px;
+    top: 50%;
+    left: 45%;
 
 
     /*Ajustes de estilo*/
@@ -195,7 +199,6 @@ li:hover ul#desplegable {
     width: 600px;
 }
 
-/* Formulario de login */
 #login{
     margin: 10px;
     width: 45%;
@@ -225,7 +228,6 @@ li:hover ul#desplegable {
     margin-top: 60px;
 }
 
-/* Formulario de registro */
 #registro{
     margin: 20px;
     width: 45%;
@@ -294,20 +296,56 @@ li:hover ul#desplegable {
 }
 
 /*Contenedor del grid de las actividades*/
-.contenedor_contenido{
+.contenedor_actividades{
     background-color: #c9e0d2;
     /*Anchura del grid de actividades*/
     width: 80%;
     padding: 20px;
-    display: flex;
-    flex-direction: row;
+    height: auto;
 }
 
-.contenedor_contenido_actividades{
-    background-color: #c9e0d2;
-    /*Anchura del grid de actividades*/
-    width: 80%;
-    padding: 20px;
+.contenedor_actividades form{
+    margin: 0px;
+}
+
+.contenedor_busqueda{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin: 20px 0px 20px 0px;
+}
+
+.contenedor_busqueda ul{
+    z-index: 5;
+    position: absolute;
+    background-color: #2b5c3f;
+    margin: 20px 0px 0px 0px;
+    padding: 0px;
+
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    border-radius: 1rem;
+}
+
+.contenedor_busqueda li{
+    padding: 10px;
+    margin: 0px;
+}
+
+.contenedor_busqueda li:hover{
+    background-color: #729e83;
+    border-radius: 1rem;
+}
+
+.contenedor_busqueda a:hover {
+    color : white;
+}
+
+.contenedor_busqueda a{
+    width: 100%;
+    text-decoration: none;
+    color: white;
 }
 
 /*En el caso de que la pantalla sea muy pequeña no 
@@ -316,236 +354,124 @@ aparece el panel lateral y el grid ocupa su sitio*/
     .panel_lateral {
         display: none;
     }
-    .contenedor_contenido, .contenedor_contenido_actividades{
+    .contenedor_actividades{
         width: 100%;
+    }
+    .actividad, .actividad_inactiva{
+        height: 400px;
     }
 }
 
-/*Contenedor del contenido, distintos tipos*/
-.contenedor_editar_perfil, .contenedor_datos_perfil{
-    width: 45%;
-    padding: 20px;
-}
-
-.contenedor_editar_perfil form, .contenedor_comentarios{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
-    font-family: "Poppins", sans-serif;
-}
-
-.contenedor_editar_perfil h1, .contenedor_editar_perfil h3,
-.contenedor_usuario h3, .contenedor_actividad h3{
-    margin: 0px;
-    font-family: "Poppins", sans-serif;
-}
-
-.contenedor_editar_perfil form input{
-    width: 80%;
-    height: 30px;
-    border-radius: 1rem;
-    border: none;
-}
-
-.contenedor_editar_perfil form input[type="submit"], input[type="reset"] {
-    background-color: #a9c5b3;
-    font-family: "Poppins", sans-serif;
-}
-
-.contenedor_editar_perfil form input[type="submit"]:hover, input[type="reset"]:hover {
-    background-color: #7f9d8a;
-}
-
-.contenedor_comentario, .contenedor_usuario{
-    background-color: #7f9d8a;
-    border-radius: 1rem;
-    padding: 20px;
-    margin: 10px;
-    font-family: "Poppins", sans-serif;
-    
-}
-.contenedor_usuario{
-    min-width: 400px;
-}
-
-.contenedor_comentario{
-    width: 90%;
-}
-
-.contenedor_comentario img, .contenedor_usuario img{
-    width: 40px;
-    height: 40px;
-}
-
-.contenedor_comentario button, .contenedor_actividad button,.contenedor_usuario button {
-    border: none;
-    background-color: transparent;
-}
-
-.contenedor_usuarios{
+/*Grid de actividades*/
+.grid_actividades{
+    display: grid;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    overflow: auto;
+    height: 95%;
+    /*Grid de 3 columnas y deja separación entre actividades*/
+    grid-template-columns:  1fr 1fr 1fr;
+    column-gap: 1em;
+    row-gap: 1em;
 }
 
-.contenedor_usuario form{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+/*En el caso de que sea demasiado pequenia la 
+pantalla muestra las actividades de dos en dos*/
+@media only screen and (max-width: 600px) {
+    .grid_actividades{
+        grid-template-columns:  1fr 1fr;
+    }
 
+    .actividad, .actividad_inactiva{
+        height: 400px;
+    }
 }
 
-#contenedor_actividades{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.contenedor_actividad{
-    background-color: #7f9d8a;
+/*Actividades dentro del grid*/
+.actividad{
+    /*Usada para que cuando el tamanio es demasiado 
+    pequenio se adapten las actividades, si se quieren aniadir mas
+    hay que hacer (100/nºfilas)*100 */
+    min-height: 300px;
+    /*Ajustes de estilo*/
+    position: relative;
+    background-color: #729e83;
     border-radius: 1rem;
-    padding: 20px;
-    margin: 10px;
-    font-family: "Poppins", sans-serif;
+    text-align: center; 
 }
 
-
-.contenedor_actividad img{
-    width: 200px;
-    height: 200px;
-}
-
-.iconos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.iconos img{
-    width: 40px;
-    height: 40px;
-}
-
-
-/*Formulario de edicion, distitos tipos*/
-.formulario, .formulario_actividades, .formulario_add_actividad {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-
-    font-family: "Poppins", sans-serif;
-    z-index: 5;
-}
-
-.formulario input[type="submit"]{
-    margin: 20px 0px 0px 0px;
-}
-
-.formulario input[type="submit"], .formulario_actividades input[type="submit"], .formulario_add_actividad input[type="submit"]{
-    width: 100%;
-    height: 30px;
-    border: none;
-
-    background-color: #a9c5b3;
+.actividad_inactiva{
+    /*Usada para que cuando el tamanio es demasiado 
+    pequenio se adapten las actividades, si se quieren aniadir mas
+    hay que hacer (100/nºfilas)*100 */
+    min-height: 300px;
+    /*Ajustes de estilo*/
+    position: relative;
+    background-color: #aa8964;
     border-radius: 1rem;
-    font: bold 20px / 20px sans-serif;
-    
+    text-align: center; 
 }
 
-.formulario input[type="submit"]:hover, .formulario_actividades input[type="submit"]:hover, 
-.formulario_add_actividad input[type="submit"]:hover, .formulario_busqueda input[type="submit"]:hover {
+/*Si es demasiado pequenia para dos 
+en dos lo hace de uno en uno y con un scroll 
+para que se puedan ver las actividades*/
+@media only screen and (max-width: 400px) {
+    .contenedor_actividades{
+        overflow-y: auto;
+    }
+
+    .grid_actividades{
+        grid-template-columns:  1fr;
+    }
+    .actividad, .actividad_inactiva{
+        height: 500px;
+    }
+}
+
+/*Transiciones al pasar el raton encima*/
+.actividad:hover{
     background-color: #2b5c3f;
-    color : white;
+    transition: background-color 0.5s ease;
 }
 
-.formulario input[type="textfield"]{
-    width: 100%;
-    margin: 20px 0px 0px 0px;
-    height: 30px;
-    border: none;
+.actividad_inactiva:hover{
+    background-color: #8a6f51;
+    transition: background-color 0.5s ease;
+}
 
-    text-align: center;
+/*Transicion del enlace inferior*/
+.actividad:hover > .enlace_inferior, .actividad_inactiva:hover > .enlace_inferior{
+    color:white;
+    transition: color  0.5s ease;
+}
+
+/*Ajustes de estilo de las imagenes del grid*/
+.actividad img, .actividad_inactiva img{
+    width: 90%;
+    height: 80%;
+    object-fit: cover;
+    padding-top: 10px;
     border-radius: 1rem;
 }
 
-
-.formulario textarea{
-    width: 400px;
-    height: 200px;
-    
-    padding: 8px;
-
-    border: none;
-    resize: none;
-    
-    border-radius: 1rem;
-    word-wrap: break-word;
-
+/*El enlace ocupa todo el grid*/
+.enlace_total {
+    display: block;
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
 }
 
-.formulario_actividades input[type="textfield"], .formulario_add_actividad input[type="textfield"]{
-    width: 100%;
-    margin: 10px 0px 10px 0px;
-    height: 30px;
-    border: none;
-
-    text-align: center;
-    border-radius: 1rem;
-}
-
-.formulario_actividades textarea, .formulario_add_actividad textarea{ 
-    width: 800px;
-    height: 500px;
-
-    padding: 8px;
-    margin: 10px 0px 10px 0px;
-    border: none;
-    resize: none;
-    
-    border-radius: 1rem;
-    word-wrap: break-word;
-}
-
-.formulario_actividades input[type="file"], .formulario_add_actividad input[type="file"]{
-    margin: 10px;
-    height: 30px;
-    border: none;
-
-    text-align: center;
-    background-color: #a9c5b3;
-    border: none;
-    background-color: transparent;
-}
-
-.formulario_add_actividad{
-    position: absolute;
-    top: 25%;
-
-    width: 600px;
-    background-color: #54705e;
-    border-radius: 1rem;
-}
-
-
-.formulario_add_actividad textarea{
-    width: 500px;
-    height: 500px;
-    margin: 0px;
-    padding: 8px;
-
-    border: none;
-    resize: none;
-    
-    border-radius: 1rem;
-    word-wrap: break-word;
+/*Enlace de la parte inferior*/
+.enlace_inferior{
+    /*Posicion*/
+    height: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    /*Valores de estilo*/
+    text-decoration: none;
+    color: black;   
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
 }
 
 .formulario_busqueda{
@@ -556,7 +482,6 @@ aparece el panel lateral y el grid ocupa su sitio*/
     font-family: "Poppins", sans-serif;
     justify-content: right;
 }
-
 .formulario_busqueda input[type="textfield"]{
     height: 30px;
     border-radius: 1rem;
@@ -571,8 +496,14 @@ aparece el panel lateral y el grid ocupa su sitio*/
     background-color: #a9c5b3;
 }
 
+.formulario_busqueda input[type="submit"]:hover {
+    background-color: #2b5c3f;
+    color : white;
+}
+
 /*Pie de pagina*/
 .pie_pagina{
+    display: flex; 
     height: 5%;
     background-color: #aabeb9;
     display: flex;
@@ -586,7 +517,7 @@ aparece el panel lateral y el grid ocupa su sitio*/
     margin: 5px;
 }
 
-/*Filtro para cuando se selecciona el panel*/
+/*Filtro para cuando se selecciona el panel de valoraciones*/
 .blur {
     filter: blur(5px);
 }
