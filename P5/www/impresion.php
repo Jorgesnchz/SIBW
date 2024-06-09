@@ -20,6 +20,7 @@
             echo $twig->render('impresion.html', ['actividad' => $actividad, 'random_image' => $random_image]);
         }
         else{
+            $mysqli->close();
             echo '<h4>404 NOT FOUND</h4>';
         }
     }
