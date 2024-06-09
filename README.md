@@ -27,5 +27,5 @@ En esta se podrá ver el guión de la misma junto con una carpeta src dentro de 
 ### [Práctica 4:](https://github.com/Jorgesnchz/SIBW/tree/main/P4)
 - Programación en el servidor(II): PHP y BD
 
-### Práctica 5:
+### [Práctica 5:](https://github.com/Jorgesnchz/SIBW/tree/main/P5)
 - Comunicación asíncrona con el servidor: AJAX
